@@ -4,6 +4,7 @@ import { FiPhone } from "react-icons/fi";
 
 import Form from "./Form";
 import { IconContext } from "react-icons";
+import Cta from "./Cta";
 
 // Custom hook to determine screen size
 interface UseMediaQueryProps {
@@ -142,19 +143,7 @@ function App() {
         </div>
         {/* White description below */}
         <div className="bg-bluCesena-500 min-h-[20vh] w-full flex-col justify-center items-center">
-          <div className="h-20 flex flex-col justify-center items-center mt-38 w-full space-y-4 ">
-            <button className="animate-bounce border-4 border-redCesena-800 bg-redCesena-400 text-white font-title text-xl font-bold py-2 px-4 min-w-80">
-              RICHIEDI UN PREVENTIVO
-            </button>
-            <button className="animate-pulse border-4 border-bluCesena-700 bg-bluCesena-500 text-white font-title text-xl font-bold py-2 px-4 min-w-80 flex ">
-              <p className="flex justify-end  items-center w-1/5">
-                <IconContext.Provider value={{ color: "white", size: "26" }}>
-                  <FiPhone />
-                </IconContext.Provider>
-              </p>
-              <p className="flex justify-start px-10">CHIAMA</p>
-            </button>
-          </div>
+          <Cta />
           <p className="text-white font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-20">
             NOLEGGIO PIATTAFORME
           </p>
@@ -181,7 +170,7 @@ function App() {
       {/* New Section for alternating boxes */}
       <div className="flex flex-col w-full ">
         {/* Row 1 */}
-        <div className="flex flex-col xl:flex-row w-full h-[80vh] xl:h-[60vh] ">
+        <div className="flex flex-col xl:flex-row w-full h-[80vh] xl:h-[60vh]  bg-redCesena-400">
           <div className="bg-redCesena-400 xl:w-1/2 w-full h-full flex-col justify-center items-center">
             <div className="flex justify-center items-center ">
               <p className="text-redCesena-990 font-title mb-16 tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
@@ -197,19 +186,7 @@ function App() {
               merci in un nuovo ufficio o negozio? Siamo qui per aiutarti.
             </p>
           </div>
-          <div className="h-20 flex flex-col justify-center items-center mt-38 w-full space-y-4 bg-redCesena-400 lg:hidden">
-            <button className="animate-bounce border-4 border-redCesena-800 bg-redCesena-400 text-white font-title text-xl font-bold py-2 px-4 min-w-80">
-              RICHIEDI UN PREVENTIVO
-            </button>
-            <button className="animate-pulse border-4 border-bluCesena-700 bg-bluCesena-500 text-white font-title text-xl font-bold py-2 px-4 min-w-80 flex ">
-              <p className="flex justify-end  items-center w-1/5">
-                <IconContext.Provider value={{ color: "white", size: "26" }}>
-                  <FiPhone />
-                </IconContext.Provider>
-              </p>
-              <p className="flex justify-start px-10">CHIAMA</p>
-            </button>
-          </div>
+          <Cta />
 
           <div
             className={`bg-cover bg-no-repeat xl:w-1/2 w-full h-full ${riga1Images[currentImage]}`}
@@ -218,7 +195,7 @@ function App() {
           </div>
         </div>
         {/* Row 2 */}
-        <div className="flex flex-col-reverse xl:flex-row w-full h-[80vh] xl:h-[60vh]">
+        <div className="flex flex-col-reverse xl:flex-row w-full h-[80vh] xl:h-[60vh] ">
           <div
             className={`bg-cover bg-no-repeat xl:w-1/2 w-full h-full ${riga2Images[currentImage]}`}
           >
@@ -241,7 +218,7 @@ function App() {
         </div>
 
         {/* Row 3 */}
-        <div className="flex flex-col xl:flex-row w-full h-[80vh] xl:h-[60vh] ">
+        <div className="flex flex-col xl:flex-row w-full h-[80vh] xl:h-[60vh]  bg-redCesena-400 ">
           <div className="bg-redCesena-400 xl:w-1/2 w-full h-full flex-COL justify-center items-center">
             <div className="flex justify-center items-center flex-col ">
               <p className="text-redCesena-990 font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
@@ -262,19 +239,7 @@ function App() {
               Smontiamo e rimontiamo i tuoi mobili con precisione e cura.
             </p>
           </div>
-          <div className="h-20 flex flex-col justify-center items-center mt-38 w-full space-y-4 bg-redCesena-400 lg:hidden">
-            <button className="animate-bounce border-4 border-redCesena-800 bg-redCesena-400 text-white font-title text-xl font-bold py-2 px-4 min-w-80">
-              RICHIEDI UN PREVENTIVO
-            </button>
-            <button className="animate-pulse border-4 border-bluCesena-700 bg-bluCesena-500 text-white font-title text-xl font-bold py-2 px-4 min-w-80 flex ">
-              <p className="flex justify-end  items-center w-1/5">
-                <IconContext.Provider value={{ color: "white", size: "26" }}>
-                  <FiPhone />
-                </IconContext.Provider>
-              </p>
-              <p className="flex justify-start px-10">CHIAMA</p>
-            </button>
-          </div>
+          <Cta />
           <div
             className={`bg-cover bg-no-repeat xl:w-1/2 w-full h-full ${riga3Images[currentImage]}`}
           >
