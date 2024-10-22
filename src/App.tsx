@@ -62,7 +62,7 @@ function App() {
   }, [images]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-bluCesena-500">
       {/* header e prima descrizione bianca sotto */}
       <div>
         {/* header e immagine hero */}
@@ -84,22 +84,22 @@ function App() {
               <p>NOLEGGIO</p>
               <span>ELEVATORE</span>
             </div>
-            <div className="text-redCesena-400 tracking-tighter font-title uppercase font-black bg-white w-fit p-1 ">
+            <div className="text-redCesena-400 tracking-tighter font-title uppercase font-black bg-bluCesena-500 w-fit p-1 ">
               <p>TRASLOCHI</p>
               <span>DEPOSITO</span>
             </div>
           </div>
         </div>
         {/* descrizione bianca sotto */}
-        <div className="bg-white min-h-[20vh] w-full flex-col justify-center items-center">
-          <p className="text-redCesena-400 font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-20 md:mt-32 lg:mt-40">
+        <div className="bg-bluCesena-500 min-h-[20vh] w-full flex-col justify-center items-center">
+          <p className="text-white font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-20 md:mt-32 lg:mt-40">
             NOLEGGIO PIATTAFORME
           </p>
 
-          <p className="text-redCesena-400 font-title tracking-[0.75em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center mt-4 items-center">
+          <p className="text-white font-title tracking-[0.75em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center mt-4 items-center">
             PER MOBILI &
           </p>
-          <p className="text-redCesena-400 font-title tracking-[0.55em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center mt-4 items-center">
+          <p className="text-white font-title tracking-[0.55em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center mt-4 items-center">
             ELETTRODOMESTICI
           </p>
           <p className="m-4 mt-24 font-title text-base font-medium leading-6">
@@ -112,7 +112,7 @@ function App() {
           </p>
         </div>
         <div className="h-20 flex flex-col justify-center items-center mt-16 w-full space-y-4">
-          <button className="border-4 border-bluCesena-700 bg-bluCesena-500 text-bluCesena-700 font-title text-xl font-bold py-2 px-4 min-w-80">
+          <button className="border-4 border-bluCesena-700 bg-bluCesena-500 text-white font-title text-xl font-bold py-2 px-4 min-w-80">
             RICHIEDI UN PREVENTIVO
           </button>
           <button className="border-4 border-redCesena-800 bg-redCesena-400 text-white font-title text-xl font-bold py-2 px-4 min-w-80">
@@ -120,7 +120,7 @@ function App() {
           </button>
         </div>
 
-        <div className="h-20 bg-white"> </div>
+        <div className="h-20 bg-bluCesena-500"> </div>
       </div>
     </div>
   );
