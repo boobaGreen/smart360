@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import TestimonialsSection from "./Testimonial";
-import { FiPhone } from "react-icons/fi";
+
 
 import Form from "./Form";
-import { IconContext } from "react-icons";
+
 import Cta from "./Cta";
 
 // Custom hook to determine screen size
