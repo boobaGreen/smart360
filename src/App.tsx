@@ -1,9 +1,17 @@
 import { useState, useEffect } from "react";
-import Button from "./Button";
+import TestimonialsSection from "./Testimonial";
+import { FiPhone } from "react-icons/fi";
 
-// Custom hook per determinare la dimensione dello schermo
-function useMediaQuery(query) {
-  const [matches, setMatches] = useState(false);
+import Form from "./Form";
+import { IconContext } from "react-icons";
+
+// Custom hook to determine screen size
+interface UseMediaQueryProps {
+  query: string;
+}
+
+function useMediaQuery(query: UseMediaQueryProps["query"]): boolean {
+  const [matches, setMatches] = useState<boolean>(false);
 
   useEffect(() => {
     const media = window.matchMedia(query);
@@ -19,31 +27,74 @@ function useMediaQuery(query) {
 }
 
 function App() {
-  const isSmallScreen = useMediaQuery("(max-width: 768px)"); // schermi piccoli
+  const isSmallScreen = useMediaQuery("(max-width: 768px)");
   const isMediumScreen = useMediaQuery(
     "(min-width: 769px) and (max-width: 1024px)"
-  ); // schermi medi
-  const isLargeScreen = useMediaQuery("(min-width: 1025px)"); // schermi grandi
+  );
 
-  // Immagini per diverse dimensioni di schermo
+  // Images for different screen sizes
   const smallImages = [
-    "bg-elevator-small", // immagine per schermi piccoli
+    "bg-elevator-small",
+    "bg-elevator-small",
+    "bg-montagna-small",
     "bg-montagna-small",
     "bg-scala-small",
+    "bg-scala-small",
+    "bg-stretto-small",
     "bg-stretto-small",
   ];
   const mediumImages = [
-    "bg-elevator-small", // immagine per schermi piccoli
+    "bg-elevator-small",
+    "bg-elevator-small",
     "bg-montagna-small",
+    "bg-montagna-small",
+    "bg-scala-small",
+    "bg-scala-small",
+    "bg-stretto-small",
     "bg-stretto-small",
   ];
   const largeImages = [
-    "bg-elevator-large", // immagine per schermi grandi
+    "bg-elevator-large",
+    "bg-elevator-large",
     "bg-scala-giu-large",
+    "bg-scala-giu-large",
+    "bg-elevator-large",
+    "bg-elevator-large",
+    "bg-prato-large",
     "bg-prato-large",
   ];
+  const riga1Images = [
+    "bg-gh-image",
+    "bg-terrazzo-cut",
+    "bg-quarto-piano",
+    "bg-flotta-large",
+    "bg-artigianale-large",
+    "bg-terrazzo-cut",
+    "bg-gh-image",
+    "bg-quarto-piano",
+  ];
+  const riga3Images = [
+    "bg-vetro-img",
+    "bg-imballa-giu",
+    "bg-imballa-1",
+    "bg-vetro-img",
+    "bg-imballa-giu",
+    "bg-imballa-2",
+    "bg-vetro-img",
+    "bg-imballa-giu",
+  ];
+  const riga2Images = [
+    "bg-apertura-flotta",
+    "bg-prato-large",
+    "bg-elevator-large",
+    "bg-mare-flotta",
+    "bg-apertura-flotta",
+    "bg-prato-large",
+    "bg-elevator-large",
+    "bg-mare-flotta",
+  ];
 
-  // Scegli le immagini in base alla dimensione dello schermo
+  // Choose images based on screen size
   const images = isSmallScreen
     ? smallImages
     : isMediumScreen
@@ -52,20 +103,19 @@ function App() {
 
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Cambia immagine automaticamente ogni 6 secondi
+  // Change image automatically every 6 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 6000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [images]);
 
   return (
     <div className="flex flex-col min-h-screen bg-bluCesena-500">
-      {/* header e prima descrizione bianca sotto */}
+      {/* Header and hero image */}
       <div>
-        {/* header e immagine hero */}
         <div
           className={`${images[currentImage]} bg-cover bg-no-repeat min-h-[80vh]`}
         >
@@ -74,54 +124,166 @@ function App() {
               <p className="text-redCesena-400">group</p>
               <span className="text-white">traslochi</span>
             </div>
-            <div className="leading-none">
+            <div className="leading-none animate-wiggle w-fit">
               <span className="text-redCesena-400">smart</span>
-              <span className="text-white">360°</span>
+              <span className="text-white ">360°</span>
             </div>
           </div>
           <div className="pt-40 pl-4 text-5xl md:text-6xl lg:text-7xl">
-            <div className="text-white tracking-tighter font-title uppercase font-black">
+            <div className="text-white tracking-tighter font-title uppercase font-black  w-fit">
               <p>NOLEGGIO</p>
               <span>ELEVATORE</span>
             </div>
-            <div className="text-redCesena-400 tracking-tighter font-title uppercase font-black bg-bluCesena-500 w-fit p-1 ">
+            <div className=" text-redCesena-400 tracking-tighter font-title uppercase font-black bg-bluCesena-500 w-fit p-1 ">
               <p>TRASLOCHI</p>
               <span>DEPOSITO</span>
             </div>
           </div>
         </div>
-        {/* descrizione bianca sotto */}
+        {/* White description below */}
         <div className="bg-bluCesena-500 min-h-[20vh] w-full flex-col justify-center items-center">
-          <p className="text-white font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-20 md:mt-32 lg:mt-40">
+          <div className="h-20 flex flex-col justify-center items-center mt-38 w-full space-y-4 ">
+            <button className="animate-bounce border-4 border-redCesena-800 bg-redCesena-400 text-white font-title text-xl font-bold py-2 px-4 min-w-80">
+              RICHIEDI UN PREVENTIVO
+            </button>
+            <button className="animate-pulse border-4 border-bluCesena-700 bg-bluCesena-500 text-white font-title text-xl font-bold py-2 px-4 min-w-80 flex ">
+              <p className="flex justify-end  items-center w-1/5">
+                <IconContext.Provider value={{ color: "white", size: "26" }}>
+                  <FiPhone />
+                </IconContext.Provider>
+              </p>
+              <p className="flex justify-start px-10">CHIAMA</p>
+            </button>
+          </div>
+          <p className="text-white font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-20">
             NOLEGGIO PIATTAFORME
           </p>
-
           <p className="text-white font-title tracking-[0.75em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center mt-4 items-center">
             PER MOBILI &
           </p>
           <p className="text-white font-title tracking-[0.55em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center mt-4 items-center">
             ELETTRODOMESTICI
           </p>
-          <p className="m-4 mt-24 font-title text-base font-medium leading-6">
+          <p className=" my-4 px-16 mt-10 font-title text-base font-medium leading-6 xl:px-80 xl:text-xl pt-20">
             Stai cercando di spostare un divano, un grande frigorifero, un
             mobiletto o un grande letto su per le scale o attraverso quella
             porta stretta? È molto più semplice utilizzare un sollevatore per
-            piattaforme per mobili per risparmiare tempo, denaro e fatica. I
-            nostri montacarichi possono anche ridurre al minimo il potenziale
-            rischio di danni ai vostri oggetti e proprietà di valore.
+            piattaforme per mobili per risparmiare tempo, denaro e fatica.
+            <br className="mb-6" /> I nostri montacarichi possono anche ridurre
+            al minimo il potenziale rischio di danni ai vostri oggetti e
+            proprietà di valore.
           </p>
-        </div>
-        <div className="h-20 flex flex-col justify-center items-center mt-16 w-full space-y-4">
-          <button className="border-4 border-bluCesena-700 bg-bluCesena-500 text-white font-title text-xl font-bold py-2 px-4 min-w-80">
-            RICHIEDI UN PREVENTIVO
-          </button>
-          <button className="border-4 border-redCesena-800 bg-redCesena-400 text-white font-title text-xl font-bold py-2 px-4 min-w-80">
-            CHIAMA
-          </button>
         </div>
 
         <div className="h-20 bg-bluCesena-500"> </div>
       </div>
+
+      {/* New Section for alternating boxes */}
+      <div className="flex flex-col w-full ">
+        {/* Row 1 */}
+        <div className="flex flex-col xl:flex-row w-full h-[80vh] xl:h-[60vh] ">
+          <div className="bg-redCesena-400 xl:w-1/2 w-full h-full flex-col justify-center items-center">
+            <div className="flex justify-center items-center ">
+              <p className="text-redCesena-990 font-title mb-16 tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
+                TRASLOCHI
+              </p>
+            </div>
+            <p className="m-4 mb-20  px-16 xl:px-40 font-title text-base font-medium leading-6  xl:text-xl text-white">
+              Hai bisogno di una mano per il trasloco nella tua nuova casa dei
+              sogni? Imballiamo la tua merce con cura e la trasportiamo in
+              ordine e siucerezza nella tua nuova abitazione.
+              <br className="mb-6" />
+              Hai necessita' di business per portare forniture di mobili o di
+              merci in un nuovo ufficio o negozio? Siamo qui per aiutarti.
+            </p>
+          </div>
+          <div className="h-20 flex flex-col justify-center items-center mt-38 w-full space-y-4 bg-redCesena-400 lg:hidden">
+            <button className="animate-bounce border-4 border-redCesena-800 bg-redCesena-400 text-white font-title text-xl font-bold py-2 px-4 min-w-80">
+              RICHIEDI UN PREVENTIVO
+            </button>
+            <button className="animate-pulse border-4 border-bluCesena-700 bg-bluCesena-500 text-white font-title text-xl font-bold py-2 px-4 min-w-80 flex ">
+              <p className="flex justify-end  items-center w-1/5">
+                <IconContext.Provider value={{ color: "white", size: "26" }}>
+                  <FiPhone />
+                </IconContext.Provider>
+              </p>
+              <p className="flex justify-start px-10">CHIAMA</p>
+            </button>
+          </div>
+
+          <div
+            className={`bg-cover bg-no-repeat xl:w-1/2 w-full h-full ${riga1Images[currentImage]}`}
+          >
+            {/* Immagine 1 */}
+          </div>
+        </div>
+        {/* Row 2 */}
+        <div className="flex flex-col-reverse xl:flex-row w-full h-[80vh] xl:h-[60vh]">
+          <div
+            className={`bg-cover bg-no-repeat xl:w-1/2 w-full h-full ${riga2Images[currentImage]}`}
+          >
+            {/* Immagine 2 */}
+          </div>
+          <div className="bg-bluCesena-500 xl:w-1/2 w-full h-full flex-col justify-center items-center">
+            <div className="flex justify-center items-center ">
+              <p className="text-white font-title mb-16 tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
+                DEPOSITO
+              </p>
+            </div>
+            <p className="m-4 mb-20  px-16 xl:px-40 font-title text-base font-medium leading-6  xl:text-xl text-redCesena-990">
+              Non sai dove stipare i tuoi mobili durante il trasloco o per altri
+              motivi? Effettuiamo servizio di deposito mobili a breve e lungo
+              termine.
+              <br className="mb-6" />
+              Problema risolto!
+            </p>
+          </div>
+        </div>
+
+        {/* Row 3 */}
+        <div className="flex flex-col xl:flex-row w-full h-[80vh] xl:h-[60vh] ">
+          <div className="bg-redCesena-400 xl:w-1/2 w-full h-full flex-COL justify-center items-center">
+            <div className="flex justify-center items-center flex-col ">
+              <p className="text-redCesena-990 font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
+                MONTAGGIO
+              </p>
+              <p className="text-redCesena-990 font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-4">
+                &
+              </p>
+              <p className="text-redCesena-990 font-title mb-16 tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-4">
+                SMONTAGGIO
+              </p>
+            </div>
+            <p className="m-4 mb-20  px-16 xl:px-40 font-title text-base font-medium leading-6  xl:text-xl text-white">
+              Sia che il tuo mobilio vada in deposito o venga subito trasportato
+              in molte occasioni e piu' comodo e siucro smontare alcuni tipi di
+              mobilio.
+              <br className="mb-6" />
+              Smontiamo e rimontiamo i tuoi mobili con precisione e cura.
+            </p>
+          </div>
+          <div className="h-20 flex flex-col justify-center items-center mt-38 w-full space-y-4 bg-redCesena-400 lg:hidden">
+            <button className="animate-bounce border-4 border-redCesena-800 bg-redCesena-400 text-white font-title text-xl font-bold py-2 px-4 min-w-80">
+              RICHIEDI UN PREVENTIVO
+            </button>
+            <button className="animate-pulse border-4 border-bluCesena-700 bg-bluCesena-500 text-white font-title text-xl font-bold py-2 px-4 min-w-80 flex ">
+              <p className="flex justify-end  items-center w-1/5">
+                <IconContext.Provider value={{ color: "white", size: "26" }}>
+                  <FiPhone />
+                </IconContext.Provider>
+              </p>
+              <p className="flex justify-start px-10">CHIAMA</p>
+            </button>
+          </div>
+          <div
+            className={`bg-cover bg-no-repeat xl:w-1/2 w-full h-full ${riga3Images[currentImage]}`}
+          >
+            {/* Immagine 3 */}
+          </div>
+        </div>
+      </div>
+      <TestimonialsSection />
+      <Form />
     </div>
   );
 }

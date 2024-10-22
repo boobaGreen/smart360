@@ -1,0 +1,158 @@
+import emailjs from "emailjs-com"; // Import EmailJS
+import { useState } from "react";
+
+emailjs.init("ZTJIhDAk7ja1Snpln"); // Initialize EmailJS with your User ID
+
+export default function Form() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [statusMessage, setStatusMessage] = useState(""); // State for status messages
+
+  const handleChange = (e: { target: { name: string; value: unknown } }) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault(); // Prevent the default form submission
+
+    emailjs
+      .send("service_s3jp2sp", "template_xablkhb", formData)
+      .then((response) => {
+        console.log("Email sent successfully:", response);
+        setStatusMessage("Email sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+        setStatusMessage("Failed to send email. Please try again.");
+      });
+  };
+
+  return (
+    <div>
+      <section className="text-gray-700 body-font relative">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-col text-center w-full mb-12">
+            <h2 className="sm:text-3xl text-xl font-medium title-font mb-4 text-gray-900">
+              Per un preventivo gratuito
+            </h2>
+            <h2 className="sm:text-3xl text-xl font-medium title-font mb-4 text-gray-900">
+              o per qualsiasi dubbio ...
+            </h2>
+            <h1 className="my-16 text-5xl font-medium title-font mb-4 text-gray-900 uppercase text-white animate-ping">
+              Scrivici
+            </h1>
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base mt-16">
+              Non esitare a contattarci per un preventivo gratuito o per
+              qualsiasi dubbio inerente i nostri servizi , saremo felici di
+              risponderti entro massimo 24 ore.
+            </p>
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+              Se preferisci chiamaci al telefono ore ufficio o scrivici su
+              WhatsApp
+            </p>
+          </div>
+          <div className="lg:w-1/2 md:w-2/3 mx-auto">
+            <form onSubmit={handleSubmit} className="flex flex-wrap -m-2">
+              <div className="p-2 w-1/2">
+                <div className="relative">
+                  <label
+                    htmlFor="name"
+                    className="leading-7 text-sm text-gray-600"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="p-2 w-1/2">
+                <div className="relative">
+                  <label
+                    htmlFor="email"
+                    className="leading-7 text-sm text-gray-600"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="p-2 w-full">
+                <div className="relative">
+                  <label
+                    htmlFor="message"
+                    className="leading-7 text-sm text-gray-600"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+              <div className="p-2 w-full">
+                <button
+                  type="submit"
+                  className="flex mx-auto text-white bg-redCesena-300 border-0 py-2 px-8 focus:border-2 hover:border-4 border-redCesena-600 rounded text-lg hover:animate-wiggle mt-14"
+                >
+                  Send
+                </button>
+              </div>
+              {statusMessage && (
+                <div className="mt-4 text-center">
+                  <p className="text-gray-600">{statusMessage}</p>
+                </div>
+              )}
+              <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+                <a className="text-indigo-500">
+                  grouptraslochismart360@gmail.com
+                </a>
+                <p className="leading-normal my-5">
+                  Via De Gasperi 109
+                  <br />
+                  Gambettola 47035 Forli-Cesena
+                  <br />
+                  P.I. 03913420406
+                </p>
+                <span className="inline-flex">
+                  <a className="text-gray-500">
+                    {/* Social media icons */}
+                    {/* Your SVG icons go here */}
+                  </a>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

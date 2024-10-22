@@ -8,6 +8,8 @@ export default {
       white: "#ffffff",
       transparent: "transparent",
       current: "currentColor",
+      yellow: { 400: "#facc15" },
+      gray: { 300: "#d1d5db" },
       redCesena: {
         100: "#FBF3F1",
         200: "#E9BDB1",
@@ -31,6 +33,15 @@ export default {
       bluCesena: { 500: "#50B3CD", 600: "#194b59", 700: "#133942" },
     },
     extend: {
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+      },
+      animation: {
+        wiggle: "wiggle 1s ease-in-out infinite",
+      },
       fontFamily: {
         title: ["Montserrat", "sans-serif"],
         main: ["Oswald", "sans-serif"],
@@ -47,6 +58,14 @@ export default {
         "flotta-large": "url('/img/flotta-large.webp')",
         "prato-large": "url('/img/prato-large.webp')",
         "scala-giu-large": "url('/img/scala-giu-large.webp')",
+        "terrazzo-cut": "url('/img/terrazzo-cut.webp')",
+        "gh-image": "url('/img/gh-large.webp')",
+        "imballa-1": "url('/img/interno_camioncino.webp')",
+        "imballa-2": "url('/img/interno_camioncino_2.webp')",
+        "imballa-giu": "url('/img/imballa.webp')",
+        "quarto-piano": "url('/img/4piano-cut.webp')",
+        "apertura-flotta": "url('/img/apertura.webp')",
+        "mare-flotta": "url('/img/mare.webp')",
       },
     },
   },
