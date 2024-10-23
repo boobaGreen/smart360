@@ -8,14 +8,14 @@ export default function CentralZPattern({
   currentImage,
 }: ICentralZPattern) {
   return (
-    <div className="flex flex-col w-full ">
+    <section className="flex flex-col w-full ">
       {/* Row 1 */}
       <div className="flex flex-col xl:flex-row w-full h-[120vh] xl:h-[60vh]  bg-redCesena-400">
         <div className="bg-redCesena-400 xl:w-1/2 w-full h-full flex-col justify-center items-center">
           <div className="flex justify-center items-center ">
-            <p className="text-redCesena-990 font-title mb-16 tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
+            <h2 className="text-redCesena-990 font-title mb-16 tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
               TRASLOCHI
-            </p>
+            </h2>
           </div>
           <p className="m-4 mb-20  px-16 xl:px-40 font-title text-base font-medium leading-6  xl:text-xl text-white">
             Hai bisogno di una mano per il trasloco nella tua nuova casa dei
@@ -43,9 +43,9 @@ export default function CentralZPattern({
         </div>
         <div className="bg-bluCesena-500 xl:w-1/2 w-full h-full flex-col justify-center items-center">
           <div className="flex justify-center items-center ">
-            <p className="text-white font-title mb-16 tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
+            <h2 className="text-white font-title mb-16 tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
               DEPOSITO
-            </p>
+            </h2>
           </div>
           <p className="m-4 mb-20  px-16 xl:px-40 font-title text-base font-medium leading-6  xl:text-xl text-redCesena-990">
             Non sai dove stipare i tuoi mobili durante il trasloco o per altri
@@ -61,15 +61,15 @@ export default function CentralZPattern({
       <div className="flex flex-col xl:flex-row w-full  h-[120vh] xl:h-[60vh]  bg-redCesena-400 ">
         <div className="bg-redCesena-400 xl:w-1/2 w-full h-full flex-COL justify-center items-center">
           <div className="flex justify-center items-center flex-col ">
-            <p className="text-redCesena-990 font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
+            <h2 className="text-redCesena-990 font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
               MONTAGGIO
-            </p>
+            </h2>
             <p className="text-redCesena-990 font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-4">
               &
             </p>
-            <p className="text-redCesena-990 font-title mb-16 tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-4">
+            <h2 className="text-redCesena-990 font-title mb-16 tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-4">
               SMONTAGGIO
-            </p>
+            </h2>
           </div>
           <p className="m-4 mb-20  px-16 xl:px-40 font-title text-base font-medium leading-6  xl:text-xl text-white">
             Sia che il tuo mobilio vada in deposito o venga subito trasportato
@@ -86,6 +86,6 @@ export default function CentralZPattern({
           {/* Immagine 3 */}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

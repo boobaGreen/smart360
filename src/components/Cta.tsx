@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import Chiama from "./Chiama";
 import RichiediPreventivo from "./RichiediPreventivo";
+import { tel1, tel1Android } from "../utils/costants";
 
 interface CtaProps {
   scrollToForm: () => void;
@@ -11,9 +12,9 @@ export default function Cta({ scrollToForm }: CtaProps) {
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const [buttonText, setButtonText] = useState("CHIAMA");
   const handleButtonClick = () => {
-    setButtonText("327 1212545");
+    setButtonText(tel1);
     if (isMobile) {
-      window.location.href = `tel:+393271212545`;
+      window.location.href = tel1Android;
     }
   };
 

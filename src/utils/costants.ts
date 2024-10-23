@@ -1,0 +1,11 @@
+export const tel1 = "392-2389818"; //Filippo
+export const tel2 = "329-1943769"; //Giuseppe
+export const tel1Android = "tel:+393922389818"; //Filippo
+export const tel2Android = "tel:+393291943769"; //Giuseppe
+export const email = "grouptraslochismart360@gmail.com";
+export const via = "Via De Gasperi";
+export const civico = "109";
+export const comune = "Gambettola";
+export const cap = "47035";
+export const provincia = "FC";
+export const partitaIva = "03913420406";

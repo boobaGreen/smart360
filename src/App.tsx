@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import TestimonialsSection from "./Testimonial";
 import { useRef } from "react";
 import { IUseMediaQueryProps } from "./interfaces/IUseMediaQueryProps";
-import Form from "./Form";
+import Form from "./FormFooter";
 
 import {
   largeImages,

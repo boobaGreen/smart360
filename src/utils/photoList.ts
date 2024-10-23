@@ -14,10 +14,10 @@ export const mediumImages = [
   "bg-elevator-small",
   "bg-montagna-small",
   "bg-montagna-small",
+  "bg-elevator-small",
+  "bg-elevator-small",
   "bg-scala-small",
   "bg-scala-small",
-  "bg-stretto-small",
-  "bg-stretto-small",
 ];
 export const largeImages = [
   "bg-elevator-large",

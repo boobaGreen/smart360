@@ -2,6 +2,18 @@ import emailjs from "emailjs-com"; // Import EmailJS
 import { useState } from "react";
 import Chiama from "./components/Chiama";
 import { useMediaQuery } from "react-responsive";
+import {
+  tel1,
+  tel1Android,
+  tel2,
+  email,
+  via,
+  civico,
+  comune,
+  cap,
+  provincia,
+  partitaIva,
+} from "./utils/costants";
 
 emailjs.init("ZTJIhDAk7ja1Snpln"); // Initialize EmailJS with your User ID
 
@@ -15,9 +27,9 @@ export default function Form() {
 
   const [buttonText, setButtonText] = useState("CHIAMA");
   const handleButtonClick = () => {
-    setButtonText("327 1212545");
+    setButtonText(tel1);
     if (isMobile) {
-      window.location.href = `tel:+393271212545`;
+      window.location.href = tel1Android;
     }
   };
   const [statusMessage, setStatusMessage] = useState(""); // State for status messages
@@ -55,15 +67,15 @@ export default function Form() {
       <section className="text-gray-700 body-font relative">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
-            <h2 className="sm:text-3xl text-xl font-bold title-font mb-4 text-gray-900">
+            <h3 className="sm:text-3xl text-xl font-bold title-font mb-4 text-gray-900">
               Per un preventivo gratuito
-            </h2>
-            <h2 className="font-bold sm:text-3xl text-xl title-font mb-4 text-gray-900">
+            </h3>
+            <h3 className="font-bold sm:text-3xl text-xl title-font mb-4 text-gray-900">
               o per qualsiasi dubbio ...
-            </h2>
-            <h1 className="my-16 text-5xl font-medium title-font mb-4 text-gray-900 uppercase text-white animate-ping">
+            </h3>
+            <h3 className="my-16 text-5xl font-medium title-font mb-4 text-gray-900 uppercase text-white animate-ping">
               Scrivici
-            </h1>
+            </h3>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base mt-16 font-medium">
               Non esitare a contattarci per un preventivo gratuito o per
               qualsiasi dubbio inerente i nostri servizi , saremo felici di
@@ -179,19 +191,17 @@ export default function Form() {
                 </div>
               </div>
               <div className="p-2 w-full pt-20 border-t border-gray-200 text-center mt-28 ">
-                <a className="text-indigo-500">
-                  grouptraslochismart360@gmail.com
-                </a>
+                <a className="text-indigo-500">{email}</a>
                 <br />
-                Filippo: 333 333 3333 <br />
-                Giuseppe: 333 333 3333
+                Filippo: {tel1} <br />
+                Giuseppe: {tel2}
                 <br />
                 <p className="leading-normal my-5">
-                  Via De Gasperi 109
+                  {via} <span>{civico}</span>
                   <br />
-                  Gambettola 47035 Forli-Cesena
+                  {comune} {cap} {provincia}
                   <br />
-                  P.I. 03913420406
+                  P.I. {partitaIva}
                 </p>
                 <span className="inline-flex ">
                   <a className="text-gray-500">

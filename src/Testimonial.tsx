@@ -60,9 +60,9 @@ const TestimonialsSection = () => {
                 alt={testimonial.name}
                 className="w-16 h-16 rounded-full mr-4"
               />
-              <h3 className="font-bold font-title text-redCesena-900 ml-2 mt-8">
+              <p className="font-bold font-title text-redCesena-900 ml-2 mt-8">
                 {testimonial.name}
-              </h3>
+              </p>
             </div>
             <p className="text-redCesena font-title">{testimonial.text}</p>
           </div>
