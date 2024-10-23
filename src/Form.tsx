@@ -20,14 +20,11 @@ export default function Form() {
     }));
   };
 
-  const handleSubmit = (e: {
-    preventDefault: () => void;
-    target: HTMLFormElement;
-  }) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent the default form submission
 
     // Blur the submit button to prevent auto-focus behavior
-    const submitButton = e.target.querySelector("button");
+    const submitButton = (e.target as HTMLFormElement).querySelector("button");
     if (submitButton) {
       submitButton.blur();
     }
