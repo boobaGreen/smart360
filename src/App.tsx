@@ -175,7 +175,7 @@ function App() {
       {/* New Section for alternating boxes */}
       <div className="flex flex-col w-full ">
         {/* Row 1 */}
-        <div className="flex flex-col xl:flex-row w-full h-[140vh] xl:h-[60vh]  bg-redCesena-400">
+        <div className="flex flex-col xl:flex-row w-full h-[120vh] xl:h-[60vh]  bg-redCesena-400">
           <div className="bg-redCesena-400 xl:w-1/2 w-full h-full flex-col justify-center items-center">
             <div className="flex justify-center items-center ">
               <p className="text-redCesena-990 font-title mb-16 tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
@@ -194,15 +194,15 @@ function App() {
           <Cta scrollToForm={scrollToForm} />
 
           <div
-            className={`bg-cover bg-no-repeat xl:w-1/2 w-full h-full ${riga1Images[currentImage]} min-h-[60vh]`}
+            className={`bg-cover bg-no-repeat xl:w-1/2 w-full h-full ${riga1Images[currentImage]}`}
           >
             {/* Immagine 1 */}
           </div>
         </div>
         {/* Row 2 */}
-        <div className="flex flex-col-reverse xl:flex-row w-full h-[140vh] xl:h-[60vh]  ">
+        <div className="flex flex-col-reverse xl:flex-row w-full h-[100vh] xl:h-[60vh]  ">
           <div
-            className={`bg-cover bg-no-repeat xl:w-1/2 w-full h-full ${riga2Images[currentImage]} min-h-40vh]`}
+            className={`bg-cover bg-no-repeat xl:w-1/2 w-full h-full ${riga2Images[currentImage]} ]`}
           >
             {/* Immagine 2 */}
           </div>
@@ -223,7 +223,7 @@ function App() {
         </div>
 
         {/* Row 3 */}
-        <div className="flex flex-col xl:flex-row w-full  h-[140vh] xl:h-[60vh]  bg-redCesena-400 ">
+        <div className="flex flex-col xl:flex-row w-full  h-[120vh] xl:h-[60vh]  bg-redCesena-400 ">
           <div className="bg-redCesena-400 xl:w-1/2 w-full h-full flex-COL justify-center items-center">
             <div className="flex justify-center items-center flex-col ">
               <p className="text-redCesena-990 font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-28">
