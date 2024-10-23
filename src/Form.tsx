@@ -158,7 +158,7 @@ export default function Form() {
                       Sending...
                     </div>
                   ) : (
-                    "Send"
+                    "INVIA"
                   )}
                 </button>
               </div>
