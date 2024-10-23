@@ -118,6 +118,11 @@ export default function Form() {
                   ></textarea>
                 </div>
               </div>
+              {statusMessage && (
+                <div className="mt-4 text-center flex justify-center items-center w-full">
+                  <p className="text-gray-600 mt-14">{statusMessage}</p>
+                </div>
+              )}
               <div className="p-2 w-full">
                 <button
                   type="submit"
