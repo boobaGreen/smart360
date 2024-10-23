@@ -2,19 +2,19 @@ import React from "react";
 
 const testimonials = [
   {
-    name: "Mario Rossi",
+    name: "Samantha Brunacci",
     photo: "/img/testimonial1.webp",
     text: "Ottimo servizio! Sono molto soddisfatto della mia esperienza.",
     rating: 4, // Aggiunta del punteggio
   },
   {
-    name: "Giulia Bianchi",
+    name: "Giulia Pazzaglia",
     photo: "/img/testimonial2.webp",
     text: "Prodotti di alta qualità e un’assistenza clienti eccellente!",
     rating: 5, // Aggiunta del punteggio
   },
   {
-    name: "Luca Verdi",
+    name: "Luca Stringara",
     photo: "/img/testimonial3.webp",
     text: "Consiglio vivamente! Tornerò sicuramente per altri acquisti.",
     rating: 5, // Aggiunta del punteggio
