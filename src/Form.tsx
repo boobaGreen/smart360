@@ -20,20 +20,35 @@ export default function Form() {
     }));
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e: {
+    preventDefault: () => void;
+    target: HTMLFormElement;
+  }) => {
     e.preventDefault(); // Prevent the default form submission
+
+    // Blur the submit button to prevent auto-focus behavior
+    const submitButton = e.target.querySelector("button");
+    if (submitButton) {
+      submitButton.blur();
+    }
+
     // Save the current scroll position
     const scrollPosition = window.pageYOffset;
+
     emailjs
       .send("service_s3jp2sp", "template_xablkhb", formData)
       .then((response) => {
         console.log("Email sent successfully:", response);
         setStatusMessage("Email sent successfully!");
         setFormData({ name: "", email: "", message: "" });
+
+        // Restore the scroll position after form reset
+        window.scrollTo(0, scrollPosition);
       })
       .catch((error) => {
         console.error("Error sending email:", error);
         setStatusMessage("Failed to send email. Please try again.");
+
         // Restore the scroll position even if there's an error
         window.scrollTo(0, scrollPosition);
       });
