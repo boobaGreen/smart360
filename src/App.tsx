@@ -6,6 +6,8 @@ import Form from "./Form";
 
 import Cta from "./Cta";
 import CtaPrimo from "./CtaPrimo";
+import { NavDesktop } from "./components/NavDesktop";
+import { NavMobile } from "./components/NavMobile";
 
 // Custom hook to determine screen size
 interface UseMediaQueryProps {
@@ -119,22 +121,27 @@ function App() {
   }, [images]);
 
   return (
-    <div className="flex flex-col min-h-screen h-auto bg-bluCesena-500 overflow-x-hidden">
+    <div className="flex flex-col min-h-screen h-auto bg-bluCesena-500 overflow-x-hidden ">
       {/* Header and hero image */}
-      <div className="">
+      <div id="home">
         <div
           className={`${images[currentImage]} bg-cover bg-no-repeat min-h-[80vh] `}
         >
-          <div className="uppercase text-red-800 text-lg md:text-2xl lg:text-3xl font-title font-black pl-4 ">
-            <div className="leading-none">
-              <p className="text-redCesena-400">group</p>
-              <span className="text-white">traslochi</span>
+          <div className="uppercase text-red-800 text-lg md:text-2xl lg:text-3xl font-title font-black pl-4 flex justify-between pr-10 hover:bg-bluCesena-500 ">
+            <div>
+              <div className="leading-none">
+                <p className="text-redCesena-400">group</p>
+                <span className="text-white">traslochi</span>
+              </div>
+              <div className="leading-none animate-wiggle w-fit">
+                <span className="text-redCesena-400">smart</span>
+                <span className="text-white ">360°</span>
+              </div>
             </div>
-            <div className="leading-none animate-wiggle w-fit">
-              <span className="text-redCesena-400">smart</span>
-              <span className="text-white ">360°</span>
-            </div>
+            <NavDesktop />
+            <NavMobile />
           </div>
+
           <div className="pt-40 pl-4 text-5xl md:text-5xl lg:text-6xl">
             <div className="text-white tracking-tighter font-title uppercase font-black  w-fit">
               <p>NOLEGGIO</p>
@@ -255,8 +262,10 @@ function App() {
           </div>
         </div>
       </div>
-      <TestimonialsSection />
-      <div ref={formRef}>
+      <div id="testimonials">
+        <TestimonialsSection />
+      </div>
+      <div ref={formRef} id="contacts">
         <Form />
       </div>
     </div>
