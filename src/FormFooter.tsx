@@ -190,16 +190,16 @@ export default function Form() {
                   />
                 </div>
               </div>
-              <div className="p-2 w-full pt-20 border-t border-gray-200 text-center mt-28 ">
-                <a className="text-indigo-500">{email}</a>
-                <br />
+              <div className="p-2 w-full pt-20 border-t border-gray-200 text-center mt-28 text-redCesena-900">
+                <br /> <br />
                 Filippo: {tel1} <br />
-                Giuseppe: {tel2}
-                <br />
+                Giuseppe: {tel2} <br /> <br />
+                <a className="">{email}</a> <br />
                 <p className="leading-normal my-5">
                   {via} <span>{civico}</span>
                   <br />
                   {comune} {cap} {provincia}
+                  <br />
                   <br />
                   P.I. {partitaIva}
                 </p>
