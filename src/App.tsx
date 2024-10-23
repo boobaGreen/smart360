@@ -74,10 +74,10 @@ function App() {
     "bg-terrazzo-cut",
     "bg-quarto-piano",
     "bg-flotta-large",
-    "bg-artigianale-large",
     "bg-terrazzo-cut",
     "bg-gh-image",
     "bg-quarto-piano",
+    "bg-flotta-large",
   ];
   const riga3Images = [
     "bg-vetro-img",
@@ -91,13 +91,13 @@ function App() {
   ];
   const riga2Images = [
     "bg-apertura-flotta",
-    "bg-prato-large",
     "bg-elevator-large",
     "bg-mare-flotta",
     "bg-apertura-flotta",
-    "bg-prato-large",
     "bg-elevator-large",
     "bg-mare-flotta",
+    "bg-apertura-flotta",
+    "bg-elevator-large",
   ];
 
   // Choose images based on screen size
