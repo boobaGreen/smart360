@@ -152,7 +152,7 @@ function App() {
           <p className="text-white font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-20">
             NOLEGGIO
           </p>
-          <p className="text-white font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-4 lg:mt-20">
+          <p className="text-white font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-4 ">
             PIATTAFORME
           </p>
           <p className="text-white font-title tracking-[0.75em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center mt-4 items-center">
