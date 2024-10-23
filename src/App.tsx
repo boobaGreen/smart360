@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import TestimonialsSection from "./Testimonial";
-
+import { useRef } from "react";
 
 import Form from "./Form";
 
 import Cta from "./Cta";
+import CtaPrimo from "./CtaPrimo";
 
 // Custom hook to determine screen size
 interface UseMediaQueryProps {
@@ -28,6 +29,10 @@ function useMediaQuery(query: UseMediaQueryProps["query"]): boolean {
 }
 
 function App() {
+  const formRef = useRef<HTMLDivElement>(null);
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   const isSmallScreen = useMediaQuery("(max-width: 768px)");
   const isMediumScreen = useMediaQuery(
     "(min-width: 769px) and (max-width: 1024px)"
@@ -143,7 +148,7 @@ function App() {
         </div>
         {/* White description below */}
         <div className="bg-bluCesena-500 min-h-[20vh] w-full flex-col justify-center items-center">
-          <Cta />
+          <CtaPrimo />
           <p className="text-white font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-20">
             NOLEGGIO PIATTAFORME
           </p>
@@ -186,7 +191,7 @@ function App() {
               merci in un nuovo ufficio o negozio? Siamo qui per aiutarti.
             </p>
           </div>
-          <Cta />
+          <Cta scrollToForm={scrollToForm} />
 
           <div
             className={`bg-cover bg-no-repeat xl:w-1/2 w-full h-full ${riga1Images[currentImage]}`}
@@ -239,7 +244,7 @@ function App() {
               Smontiamo e rimontiamo i tuoi mobili con precisione e cura.
             </p>
           </div>
-          <Cta />
+          <Cta scrollToForm={scrollToForm} />
           <div
             className={`bg-cover bg-no-repeat xl:w-1/2 w-full h-full ${riga3Images[currentImage]}`}
           >
@@ -248,7 +253,9 @@ function App() {
         </div>
       </div>
       <TestimonialsSection />
-      <Form />
+      <div ref={formRef}>
+        <Form />
+      </div>
     </div>
   );
 }

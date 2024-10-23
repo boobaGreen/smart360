@@ -37,25 +37,25 @@ export default function Form() {
   };
 
   return (
-    <div>
+    <div className="font-title">
       <section className="text-gray-700 body-font relative">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
-            <h2 className="sm:text-3xl text-xl font-medium title-font mb-4 text-gray-900">
+            <h2 className="sm:text-3xl text-xl font-bold title-font mb-4 text-gray-900">
               Per un preventivo gratuito
             </h2>
-            <h2 className="sm:text-3xl text-xl font-medium title-font mb-4 text-gray-900">
+            <h2 className="font-bold sm:text-3xl text-xl title-font mb-4 text-gray-900">
               o per qualsiasi dubbio ...
             </h2>
             <h1 className="my-16 text-5xl font-medium title-font mb-4 text-gray-900 uppercase text-white animate-ping">
               Scrivici
             </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base mt-16">
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base mt-16 font-medium">
               Non esitare a contattarci per un preventivo gratuito o per
               qualsiasi dubbio inerente i nostri servizi , saremo felici di
               risponderti entro massimo 24 ore.
             </p>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base font-medium">
               Se preferisci chiamaci al telefono ore ufficio o scrivici su
               WhatsApp
             </p>
@@ -121,20 +121,24 @@ export default function Form() {
               <div className="p-2 w-full">
                 <button
                   type="submit"
-                  className="flex mx-auto text-white bg-redCesena-300 border-0 py-2 px-8 focus:border-2 hover:border-4 border-redCesena-600 rounded text-lg hover:animate-wiggle mt-14"
+                  className="uppercase shadow-md shadow-redCesena-500 flex mx-auto text-white bg-redCesena-300 border-0 py-2 px-8 focus:border-2 hover:border-4 border-redCesena-600 rounded text-lg font-bold hover:animate-wiggle mt-14"
                 >
                   Send
                 </button>
               </div>
               {statusMessage && (
-                <div className="mt-4 text-center">
-                  <p className="text-gray-600">{statusMessage}</p>
+                <div className="mt-4 text-center flex justify-center items-center">
+                  <p className="text-gray-600 mt-14">{statusMessage}</p>
                 </div>
               )}
-              <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+              <div className="p-2 w-full pt-20 border-t border-gray-200 text-center mt-28 ">
                 <a className="text-indigo-500">
                   grouptraslochismart360@gmail.com
                 </a>
+                <br />
+                Filippo: 333 333 3333 <br />
+                Giuseppe: 333 333 3333
+                <br />
                 <p className="leading-normal my-5">
                   Via De Gasperi 109
                   <br />
@@ -142,7 +146,7 @@ export default function Form() {
                   <br />
                   P.I. 03913420406
                 </p>
-                <span className="inline-flex">
+                <span className="inline-flex ">
                   <a className="text-gray-500">
                     {/* Social media icons */}
                     {/* Your SVG icons go here */}

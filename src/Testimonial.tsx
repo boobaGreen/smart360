@@ -43,14 +43,14 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 const TestimonialsSection = () => {
   return (
     <section className="py-10 bg-white px-20">
-      <h2 className="text-2xl font-bold text-center mb-20 mt-12">
+      <h2 className="text-2xl font-bold text-center mb-20 mt-12 font-title">
         Cosa dicono i nostri clienti
       </h2>
-      <div className="flex flex-col xl:flex-row justify-center items-center xl:gap-20 ">
+      <div className="flex flex-col xl:flex-row justify-center items-center xl:gap-40 gap-20 ">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-gradient-to-r from-bluCesena-500 to-bluCesena-700  shadow-lg rounded-lg p-5 relative mb-10 w-80"
+            className="bg-gradient-to-r from-bluCesena-500 to-bluCesena-700  shadow-lg rounded-lg p-5 relative mb-10 w-80 hover:scale-125 animate-wiggle hover:animate-none  "
           >
             <StarRating rating={testimonial.rating} />{" "}
             {/* Aggiunta delle stelle */}
@@ -60,9 +60,9 @@ const TestimonialsSection = () => {
                 alt={testimonial.name}
                 className="w-16 h-16 rounded-full mr-4"
               />
-              <h3 className="font-semibold">{testimonial.name}</h3>
+              <h3 className="font-semibold font-title">{testimonial.name}</h3>
             </div>
-            <p className="text-white">{testimonial.text}</p>
+            <p className="text-white font-title">{testimonial.text}</p>
           </div>
         ))}
       </div>
