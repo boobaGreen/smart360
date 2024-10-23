@@ -46,11 +46,11 @@ const TestimonialsSection = () => {
       <h2 className="text-2xl font-bold text-center mb-20 mt-12 font-title">
         Cosa dicono i nostri clienti
       </h2>
-      <div className="flex flex-col xl:flex-row justify-center items-center xl:gap-40 gap-20 ">
+      <div className="flex flex-col xl:flex-row justify-center items-center xl:gap-40 gap-20   ">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-gradient-to-r from-bluCesena-500 to-bluCesena-700  shadow-lg rounded-lg p-5 relative mb-10 w-80 hover:scale-125 animate-wiggle hover:animate-none  "
+            className="bg-gradient-to-r from-bluCesena-500 to-bluCesena-700  shadow-lg rounded-lg p-5 relative mb-10 w-64 md:w-80 hover:scale-125 animate-wiggle hover:animate-none  "
           >
             <StarRating rating={testimonial.rating} />{" "}
             {/* Aggiunta delle stelle */}
