@@ -13,7 +13,9 @@ export const NavMobile = () => {
 
   return (
     <div ref={ref} className="lg:hidden text-white ">
-      <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
+      <div className="text-redCesena-500">
+        <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
+      </div>
       <AnimatePresence>
         {isOpen && (
           <motion.div

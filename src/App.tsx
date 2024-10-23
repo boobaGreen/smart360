@@ -127,7 +127,7 @@ function App() {
         <div
           className={`${images[currentImage]} bg-cover bg-no-repeat min-h-[80vh] `}
         >
-          <div className="uppercase text-red-800 text-lg md:text-2xl lg:text-3xl font-title font-black pl-4 flex justify-between pr-10 hover:bg-bluCesena-500 ">
+          <div className="uppercase text-red-800 text-lg md:text-2xl lg:text-3xl font-title font-black pl-4 flex justify-between pr-6 md:hover:bg-bluCesena-500 ">
             <div>
               <div className="leading-none">
                 <p className="text-redCesena-400">group</p>
