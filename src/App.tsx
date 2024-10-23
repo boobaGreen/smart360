@@ -46,10 +46,10 @@ function App() {
     "bg-elevator-small",
     "bg-montagna-small",
     "bg-montagna-small",
+    "bg-elevator-small",
+    "bg-elevator-small",
     "bg-scala-small",
     "bg-scala-small",
-    "bg-stretto-small",
-    "bg-stretto-small",
   ];
   const mediumImages = [
     "bg-elevator-small",
