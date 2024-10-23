@@ -119,7 +119,7 @@ function App() {
   }, [images]);
 
   return (
-    <div className="flex flex-col min-h-screen h-auto bg-bluCesena-500 ">
+    <div className="flex flex-col min-h-screen h-auto bg-bluCesena-500 overflow-x-hidden">
       {/* Header and hero image */}
       <div className="">
         <div
