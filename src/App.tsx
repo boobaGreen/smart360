@@ -71,12 +71,12 @@ function App() {
   ];
   const riga1Images = [
     "bg-gh-image",
-    "bg-terrazzo-cut",
+    "bg-montagna-small",
     "bg-quarto-piano",
     "bg-flotta-large",
     "bg-terrazzo-cut",
     "bg-gh-image",
-    "bg-quarto-piano",
+    "bg-montagna-small",
     "bg-flotta-large",
   ];
   const riga3Images = [
