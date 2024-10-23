@@ -50,7 +50,7 @@ const TestimonialsSection = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-gradient-to-r from-bluCesena-500 to-bluCesena-700  shadow-lg rounded-lg p-5 relative mb-10 w-64 md:w-80 hover:scale-125 animate-wiggle hover:animate-none  "
+            className="bg-gradient-to-r from-bluCesena-500 to-bluCesena-200  shadow-lg rounded-lg p-5 relative mb-10 w-64 md:w-80 hover:scale-125 animate-wiggle hover:animate-none  "
           >
             <StarRating rating={testimonial.rating} />{" "}
             {/* Aggiunta delle stelle */}
@@ -60,9 +60,11 @@ const TestimonialsSection = () => {
                 alt={testimonial.name}
                 className="w-16 h-16 rounded-full mr-4"
               />
-              <h3 className="font-semibold font-title">{testimonial.name}</h3>
+              <h3 className="font-bold font-title text-redCesena-900 ml-2 mt-8">
+                {testimonial.name}
+              </h3>
             </div>
-            <p className="text-white font-title">{testimonial.text}</p>
+            <p className="text-redCesena font-title">{testimonial.text}</p>
           </div>
         ))}
       </div>

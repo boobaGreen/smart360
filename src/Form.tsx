@@ -1,5 +1,7 @@
 import emailjs from "emailjs-com"; // Import EmailJS
 import { useState } from "react";
+import Chiama from "./components/Chiama";
+import { useMediaQuery } from "react-responsive";
 
 emailjs.init("ZTJIhDAk7ja1Snpln"); // Initialize EmailJS with your User ID
 
@@ -9,7 +11,15 @@ export default function Form() {
     email: "",
     message: "",
   });
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
+  const [buttonText, setButtonText] = useState("CHIAMA");
+  const handleButtonClick = () => {
+    setButtonText("327 1212545");
+    if (isMobile) {
+      window.location.href = `tel:+393271212545`;
+    }
+  };
   const [statusMessage, setStatusMessage] = useState(""); // State for status messages
   const [loading, setLoading] = useState(false); // State to manage loading spinner
 
@@ -155,12 +165,18 @@ export default function Form() {
                           d="M4 12a8 8 0 018-8v8h8a8 8 0 11-16 0z"
                         ></path>
                       </svg>
-                      Sending...
+                      Invio...
                     </div>
                   ) : (
                     "INVIA"
                   )}
                 </button>
+                <div className="flex justify-center items-center mt-24">
+                  <Chiama
+                    handleButtonClick={handleButtonClick}
+                    buttonText={buttonText}
+                  />
+                </div>
               </div>
               <div className="p-2 w-full pt-20 border-t border-gray-200 text-center mt-28 ">
                 <a className="text-indigo-500">
