@@ -22,7 +22,8 @@ export default function Form() {
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault(); // Prevent the default form submission
-
+    // Save the current scroll position
+    const scrollPosition = window.pageYOffset;
     emailjs
       .send("service_s3jp2sp", "template_xablkhb", formData)
       .then((response) => {
@@ -33,6 +34,8 @@ export default function Form() {
       .catch((error) => {
         console.error("Error sending email:", error);
         setStatusMessage("Failed to send email. Please try again.");
+        // Restore the scroll position even if there's an error
+        window.scrollTo(0, scrollPosition);
       });
   };
 
