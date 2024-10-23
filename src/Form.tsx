@@ -11,6 +11,7 @@ export default function Form() {
   });
 
   const [statusMessage, setStatusMessage] = useState(""); // State for status messages
+  const [loading, setLoading] = useState(false); // State to manage loading spinner
 
   const handleChange = (e: { target: { name: string; value: unknown } }) => {
     const { name, value } = e.target;
@@ -22,6 +23,7 @@ export default function Form() {
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault(); // Prevent the default form submission
+    setLoading(true); // Set loading state to true
 
     emailjs
       .send("service_s3jp2sp", "template_xablkhb", formData)
@@ -29,10 +31,12 @@ export default function Form() {
         console.log("Email sent successfully:", response);
         setStatusMessage("Email sent successfully!");
         setFormData({ name: "", email: "", message: "" });
+        setLoading(false); // Set loading state to false after success
       })
       .catch((error) => {
         console.error("Error sending email:", error);
         setStatusMessage("Failed to send email. Please try again.");
+        setLoading(false); // Set loading state to false after error
       });
   };
 
@@ -127,15 +131,37 @@ export default function Form() {
                 <button
                   type="submit"
                   className="uppercase shadow-md shadow-redCesena-500 flex mx-auto text-white bg-redCesena-300 border-0 py-2 px-8 focus:border-2 hover:border-4 border-redCesena-600 rounded text-lg font-bold hover:animate-wiggle mt-14"
+                  disabled={loading} // Disable button when loading
                 >
-                  Send
+                  {loading ? (
+                    <div className="flex items-center">
+                      <svg
+                        className="animate-spin h-5 w-5 mr-3 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v8h8a8 8 0 11-16 0z"
+                        ></path>
+                      </svg>
+                      Sending...
+                    </div>
+                  ) : (
+                    "Send"
+                  )}
                 </button>
               </div>
-              {statusMessage && (
-                <div className="mt-4 text-center flex justify-center items-center">
-                  <p className="text-gray-600 mt-14">{statusMessage}</p>
-                </div>
-              )}
               <div className="p-2 w-full pt-20 border-t border-gray-200 text-center mt-28 ">
                 <a className="text-indigo-500">
                   grouptraslochismart360@gmail.com
