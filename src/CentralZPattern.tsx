@@ -59,7 +59,7 @@ export default function CentralZPattern({
             <br className="mb-6" />
             Problema risolto!
           </p>
-          <div className="  ">
+          <div className="xl:hidden">
             <TruckAnimation />
           </div>
         </div>
