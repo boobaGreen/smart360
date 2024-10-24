@@ -43,10 +43,23 @@ export default {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },
         },
+        drive: {
+          "0%": { left: "-320px" },
+          "100%": { left: "100vw" },
+        },
+        smoke: {
+          "0%": { transform: "scale(0) translate(0, 0)", opacity: 0.7 },
+          "100%": { transform: "scale(2) translate(10px, -40px)", opacity: 0 },
+        },
       },
       animation: {
         wiggle: "wiggle 1s ease-in-out infinite",
+        drive: "drive 10s linear infinite", // Slower movement
+        "smoke-1": "smoke 3s linear infinite",
+        "smoke-2": "smoke 3s linear 1s infinite",
+        "smoke-3": "smoke 3s linear 2s infinite",
       },
+
       fontFamily: {
         title: ["Montserrat", "sans-serif"],
         main: ["Oswald", "sans-serif"],
@@ -73,65 +86,3 @@ export default {
   },
   plugins: [tailwindcssBrandColors, tailwindcssDebugScreens],
 };
-
-// // Images for different screen sizes
-// export const smallImages = [
-//   "bg-elevator-small",
-//   "bg-elevator-small",
-//   "bg-montagna-small",
-//   "bg-montagna-small",
-//   "bg-elevator-small",
-//   "bg-elevator-small",
-//   "bg-scala-small",
-//   "bg-scala-small",
-// ];
-// export const mediumImages = [
-//   "bg-elevator-small",
-//   "bg-elevator-small",
-//   "bg-montagna-small",
-//   "bg-montagna-small",
-//   "bg-elevator-small",
-//   "bg-elevator-small",
-//   "bg-scala-small",
-//   "bg-scala-small",
-// ];
-// export const largeImages = [
-//   "bg-elevator-large",
-//   "bg-elevator-large",
-//   "bg-scala-giu-large",
-//   "bg-scala-giu-large",
-//   "bg-elevator-large",
-//   "bg-elevator-large",
-//   "bg-prato-large",
-//   "bg-prato-large",
-// ];
-// export const riga1Images = [
-//   "bg-gh-image",
-//   "bg-montagna-small",
-//   "bg-quarto-piano",
-//   "bg-flotta-large",
-//   "bg-terrazzo-cut",
-//   "bg-gh-image",
-//   "bg-montagna-small",
-//   "bg-flotta-large",
-// ];
-// export const riga3Images = [
-//   "bg-vetro-img",
-//   "bg-imballa-giu",
-//   "bg-imballa-1",
-//   "bg-vetro-img",
-//   "bg-imballa-giu",
-//   "bg-imballa-2",
-//   "bg-vetro-img",
-//   "bg-imballa-giu",
-// ];
-// export const riga2Images = [
-//   "bg-apertura-flotta",
-//   "bg-elevator-large",
-//   "bg-mare-flotta",
-//   "bg-apertura-flotta",
-//   "bg-elevator-large",
-//   "bg-mare-flotta",
-//   "bg-apertura-flotta",
-//   "bg-elevator-large",
-// ];

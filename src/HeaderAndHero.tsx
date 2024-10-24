@@ -4,6 +4,7 @@ import { NavMobile } from "./components/NavMobile";
 import Title from "./components/Title";
 import CtaPrimo from "./components/CtaPrimo.tsx";
 import { IHeaderAndHeroProps } from "./interfaces/IHeaderAndHero.ts";
+import TruckAnimation from "./components/TruckAnimation.tsx";
 
 export default function HeaderAndHero({
   scrollToForm,
@@ -38,6 +39,7 @@ export default function HeaderAndHero({
         <h2 className="text-white font-title tracking-[0.5em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center mt-4 items-center">
           ELETTRODOMESTICI
         </h2>
+
         <p className=" my-4 px-16 mt-10 font-title text-base font-medium leading-6 xl:px-80 xl:text-xl pt-20">
           Stai cercando di spostare un divano, un grande frigorifero, un
           mobiletto o un grande letto su per le scale o attraverso quella porta
@@ -47,6 +49,9 @@ export default function HeaderAndHero({
           minimo il potenziale rischio di danni ai vostri oggetti e proprietà di
           valore.
         </p>
+        <div className="mt-24">
+          <TruckAnimation />
+        </div>
       </section>
 
       <div className="h-20 bg-bluCesena-500"> </div>

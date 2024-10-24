@@ -14,6 +14,8 @@ import {
 } from "./utils/photoList";
 import HeaderAndHero from "./HeaderAndHero";
 import CentralZPattern from "./CentralZPattern";
+import Footer from "./Footer";
+import TruckAnimation from "./components/TruckAnimation";
 
 function useMediaQuery(query: IUseMediaQueryProps["query"]): boolean {
   const [matches, setMatches] = useState<boolean>(false);
@@ -81,6 +83,8 @@ function App() {
       <div ref={formRef} id="contacts">
         <Form />
       </div>
+      <TruckAnimation />
+      <Footer />
     </div>
   );
 }

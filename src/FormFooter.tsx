@@ -2,18 +2,7 @@ import emailjs from "emailjs-com"; // Import EmailJS
 import { useState } from "react";
 import Chiama from "./components/Chiama";
 import { useMediaQuery } from "react-responsive";
-import {
-  tel1,
-  tel1Android,
-  tel2,
-  email,
-  via,
-  civico,
-  comune,
-  cap,
-  provincia,
-  partitaIva,
-} from "./utils/costants";
+import { tel1, tel1Android } from "./utils/costants";
 
 emailjs.init("ZTJIhDAk7ja1Snpln"); // Initialize EmailJS with your User ID
 
@@ -64,7 +53,9 @@ export default function Form() {
 
   return (
     <div className="font-title">
-      <section className="text-gray-700 body-font relative">
+      <section className="text-gray-700 body-font">
+        {" "}
+        {/* Make section relative */}
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <h3 className="sm:text-3xl text-xl font-bold title-font mb-4 text-gray-900">
@@ -189,26 +180,6 @@ export default function Form() {
                     buttonText={buttonText}
                   />
                 </div>
-              </div>
-              <div className="p-2 w-full pt-20 border-t border-gray-200 text-center mt-28 text-redCesena-900">
-                <br /> <br />
-                Filippo: {tel1} <br />
-                Giuseppe: {tel2} <br /> <br />
-                <a className="">{email}</a> <br />
-                <p className="leading-normal my-5">
-                  {via} <span>{civico}</span>
-                  <br />
-                  {comune} {cap} {provincia}
-                  <br />
-                  <br />
-                  P.I. {partitaIva}
-                </p>
-                <span className="inline-flex ">
-                  <a className="text-gray-500">
-                    {/* Social media icons */}
-                    {/* Your SVG icons go here */}
-                  </a>
-                </span>
               </div>
             </form>
           </div>
