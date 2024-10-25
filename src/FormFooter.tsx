@@ -3,6 +3,7 @@ import { useState } from "react";
 import Chiama from "./components/Chiama";
 import { useMediaQuery } from "react-responsive";
 import { tel1, tel1Android } from "./utils/costants";
+import TruckAnimation from "./components/TruckAnimation";
 
 emailjs.init("ZTJIhDAk7ja1Snpln"); // Initialize EmailJS with your User ID
 
@@ -180,11 +181,16 @@ export default function Form() {
                     buttonText={buttonText}
                   />
                 </div>
+                <div className="h-36"></div>
               </div>
             </form>
           </div>
         </div>
       </section>
+      <div className="h-48 absolute top-0 right-0">
+        <TruckAnimation></TruckAnimation>
+      </div>
+      {/* Adjust TruckAnimation position */}
     </div>
   );
 }
