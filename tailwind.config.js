@@ -62,7 +62,7 @@ export default {
         },
       },
       animation: {
-        jolt: "jolt 0.4s ease-in-out infinite",
+        jolt: "jolt 0.5s ease-in-out infinite",
         wiggle: "wiggle 1s ease-in-out infinite",
         drive: "drive 10s linear infinite", // Slower movement
         driveMobile: "drive 5s linear infinite",
