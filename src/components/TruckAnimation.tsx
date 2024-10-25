@@ -33,7 +33,10 @@ const TruckAnimation = () => {
           <div className="absolute top-[35px] right-[-15px] w-[10px] h-[30px] bg-[#c4253f] rounded"></div>
 
           {/* Box section */}
-          <div className="absolute top-3.5 right-[110px] w-[190px] h-[90px] bg-[#fffffe] border-4 border-[#c4253f] rounded">
+          <div
+            style={{ backgroundColor: "#fffffe !important" }}
+            className="absolute top-3.5 right-[110px] w-[190px] h-[90px] bg-[#fffffe] border-4 border-[#c4253f] rounded"
+          >
             <div className="absolute inset-0 flex flex-col justify-center items-center">
               <span className="text-redCesena-900 text-lg font-bold">
                 Group Traslochi

@@ -62,10 +62,7 @@ function App() {
   }, [images]);
 
   return (
-    <div
-      data-theme="light"
-      className="flex flex-col min-h-screen h-auto bg-bluCesena-500 overflow-x-hidden select-none  "
-    >
+    <div className="flex flex-col min-h-screen h-auto bg-bluCesena-500 overflow-x-hidden select-none  ">
       {/* Header and hero image */}
       <HeaderAndHero
         scrollToForm={scrollToForm}
