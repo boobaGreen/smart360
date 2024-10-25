@@ -12,11 +12,10 @@ const TruckAnimation = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-44 overflow-hidden">
-      {/* Elemento audio nascosto */}
-      <audio ref={hornSound} src="/sound/generaleLee.mp3" preload="auto" />
-
+    <div className="flex justify-center items-center h-44 w-full overflow-hidden">
       <div className="relative w-full h-40 bg-transparent border-gray-[#6b7280] border-b-0 ">
+        {/* Elemento audio nascosto */}
+        <audio ref={hornSound} src="/sound/generaleLee.mp3" preload="auto" />
         <div
           className="absolute top-0 left-0 w-[320px] h-[150px] xl:animate-drive animate-driveMobile"
           onClick={playHornSound}

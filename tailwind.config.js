@@ -65,6 +65,7 @@ export default {
         jolt: "jolt 0.4s ease-in-out infinite",
         wiggle: "wiggle 1s ease-in-out infinite",
         drive: "drive 10s linear infinite", // Slower movement
+        driveMobile: "drive 5s linear infinite",
         smoke1: "smoke 3s linear infinite",
         smoke2: "smoke 3s linear 1s infinite",
         smoke3: "smoke 3s linear 2s infinite",
