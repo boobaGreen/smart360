@@ -2,7 +2,7 @@ const TruckAnimation = () => {
   return (
     <div className="flex justify-center items-center h-auto overflow-hidden">
       <div className="relative w-full h-40 bg-transparent border-gray-[#6b7280] border-b-0">
-        <div className="absolute top-0 left-0 w-[320px] h-[150px] animate-drive">
+        <div className="absolute top-0 left-0 w-[320px] h-[150px] xl:animate-drive animate-driveMobile">
           {/* Cab section */}
           <div className="absolute top-1 right-0 w-[110px] h-[90px] bg-[#c4253f] rounded-t-[10px]"></div>
 
@@ -22,7 +22,7 @@ const TruckAnimation = () => {
               <span className="text-redCesena-900 text-lg font-bold">
                 Group Traslochi
               </span>
-              <span className="text-redCesena-900 text-sm font-bold">
+              <span className="text-redCesena-900 text-sm font-bold animate-wiggle">
                 Smart360°
               </span>
             </div>
