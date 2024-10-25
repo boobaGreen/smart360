@@ -12,7 +12,7 @@ const TruckAnimation = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-44 w-full overflow-hidden">
+    <div className="flex justify-center items-center h-56 w-full overflow-hidden ">
       <div className="relative w-full h-40 bg-transparent border-gray-[#6b7280] border-b-0 ">
         {/* Elemento audio nascosto */}
         <audio ref={hornSound} src="/sound/generaleLee.mp3" preload="auto" />
@@ -21,22 +21,19 @@ const TruckAnimation = () => {
           onClick={playHornSound}
         >
           {/* Cab section */}
-          <div className="absolute top right-0 w-[110px] h-[100px] bg-[#c4253f] rounded-t-[10px] animate-jolt"></div>
+          <div className="z-10 absolute top-2 right-0 w-[110px] h-[100px] bg-[#c4253f] rounded-t-[10px] animate-jolt border-2 border-[#000000]">
+            {/* Window */}
+            <div className="absolute top-[12px] right-[10px] w-[60px] h-[35px] bg-bluCesena-200 rounded  border-2 border-[#000000]"></div>
 
-          {/* Window */}
-          <div className="absolute top-[12px] right-[10px] w-[60px] h-[35px] bg-bluCesena-200 rounded"></div>
+            {/* Grill */}
+            <div className="absolute top-[60px] right-[80px] w-5 h-[30px] bg-[#646363] rounded z-50 border-2 border-[#000000]"></div>
 
-          {/* Grill */}
-          <div className="absolute top-[60px] right-[80px] w-5 h-[30px] bg-gray-[#111827] rounded"></div>
-
-          {/* Mirror */}
-          <div className="absolute top-[35px] right-[-15px] w-[10px] h-[30px] bg-[#c4253f] rounded"></div>
+            {/* Mirror */}
+            <div className="absolute top-[35px] right-[-11px] w-[10px] h-[30px] bg-[#c4253f] border-2 border-[#000000] "></div>
+          </div>
 
           {/* Box section */}
-          <div
-            style={{ backgroundColor: "#fffffe !important" }}
-            className="absolute top-3.5 right-[110px] w-[190px] h-[90px] bg-[#fffffe] border-4 border-[#c4253f] rounded"
-          >
+          <div className="absolute -top-4 right-[110px] w-[190px] h-[130px] bg-[#fffffe] rounded border-2 border-[#000000] z-10">
             <div className="absolute inset-0 flex flex-col justify-center items-center">
               <span className="text-redCesena-900 text-lg font-bold">
                 Group Traslochi
