@@ -188,7 +188,7 @@ export default function Form() {
         </div>
       </section>
       <div className="h-48 absolute top-0 right-0">
-        <TruckAnimation></TruckAnimation>
+        <TruckAnimation />
       </div>
       {/* Adjust TruckAnimation position */}
     </div>

@@ -15,8 +15,8 @@ export default function Footer() {
     <div className="font-title font-semibold pt-0  text-center mt-0 text-redCesena-900 w-auto flex flex-col justify-center items-center ">
       <div className="w-1/2 border-t border-gray-200 mb-12"></div>
       <br /> <br />
-      Filippo: {tel1} <br />
       Giuseppe: {tel2} <br /> <br />
+      Filippo: {tel1} <br />
       <a className="">{email}</a> <br />
       <p className="leading-normal my-5">
         {via} <span>{civico}</span>
