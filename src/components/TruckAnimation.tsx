@@ -1,13 +1,24 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const TruckAnimation = () => {
   // Crea un riferimento all'elemento audio
   const hornSound = useRef<HTMLAudioElement>(null);
+  // Stato per gestire il testo
+  const [displayText, setDisplayText] = useState("Smart360°");
+  const [headerText, setHeaderText] = useState("Group Traslochi"); // Nuovo stato per il testo dell'intestazione
 
   // Funzione per riprodurre il suono del clacson
   const playHornSound = () => {
     if (hornSound.current) {
       hornSound.current.play();
+      // Cambia il testo temporaneamente
+      setDisplayText("01");
+      setHeaderText("General Lee"); // Cambia l'intestazione
+      // Ripristina il testo dopo 1 secondo
+      setTimeout(() => {
+        setDisplayText("Smart360°");
+        setHeaderText("Group Traslochi"); // Ripristina l'intestazione
+      }, 2500); // Cambia il tempo come desiderato
     }
   };
 
@@ -23,7 +34,7 @@ const TruckAnimation = () => {
           {/* Cab section */}
           <div className="z-10 absolute top-2 right-0 w-[110px] h-[100px] bg-[#c4253f] rounded-t-[10px] animate-jolt border-2 border-[#000000]">
             {/* Window */}
-            <div className="absolute top-[12px] right-[10px] w-[60px] h-[35px] bg-bluCesena-200 rounded  border-2 border-[#000000]"></div>
+            <div className="absolute top-[12px] right-[10px] w-[60px] h-[35px] bg-bluCesena-200 rounded border-2 border-[#000000]"></div>
 
             {/* Grill */}
             <div className="absolute top-[60px] right-[80px] w-5 h-[30px] bg-[#646363] rounded z-50 border-2 border-[#000000]"></div>
@@ -36,14 +47,14 @@ const TruckAnimation = () => {
           <div className="absolute -top-4 right-[110px] w-[190px] h-[130px] bg-[#fffffe] rounded border-2 border-[#000000] z-10">
             <div className="absolute inset-0 flex flex-col justify-center items-center">
               <span className="text-redCesena-900 text-lg font-bold">
-                Group Traslochi
+                {headerText} {/* Usa lo stato per l'intestazione */}
               </span>
               <span className="text-redCesena-900 text-sm font-bold animate-wiggle">
-                Smart360°
+                {displayText} {/* Usa lo stato per il testo */}
               </span>
             </div>
-            <div className="absolute top-[10px] right-[10px] w-[170px] h-1 bg-[#c4253f]"></div>
-            <div className="absolute bottom-[10px] right-[10px] w-[170px] h-1 bg-[#c4253f]"></div>
+            <div className="absolute top-[22px] right-[10px] w-[170px] h-1 bg-[#c4253f]"></div>
+            <div className="absolute bottom-[22px] right-[10px] w-[170px] h-1 bg-[#c4253f]"></div>
           </div>
 
           {/* Wheels */}

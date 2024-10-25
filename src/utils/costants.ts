@@ -9,3 +9,7 @@ export const comune = "Gambettola";
 export const cap = "47035";
 export const provincia = "FC";
 export const partitaIva = "03913420406";
+
+// da portare su .env
+
+export const initEmailjs = "ZTJIhDAk7ja1Snpln";

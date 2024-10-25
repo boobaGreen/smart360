@@ -4,8 +4,9 @@ import Chiama from "./components/Chiama";
 import { useMediaQuery } from "react-responsive";
 import { tel1, tel1Android } from "./utils/costants";
 import TruckAnimation from "./components/TruckAnimation";
+import { initEmailjs } from "./utils/costants";
 
-emailjs.init("ZTJIhDAk7ja1Snpln"); // Initialize EmailJS with your User ID
+emailjs.init(initEmailjs); // Initialize EmailJS with your User ID
 
 export default function Form() {
   const [formData, setFormData] = useState({
@@ -39,15 +40,18 @@ export default function Form() {
 
     emailjs
       .send("service_s3jp2sp", "template_xablkhb", formData)
-      .then((response) => {
-        console.log("Email sent successfully:", response);
-        setStatusMessage("Email sent successfully!");
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .then((_response) => {
+        console.log("");
+        setStatusMessage("Messaggio Ricevuto! Grazie per averci contattato.");
         setFormData({ name: "", email: "", message: "" });
         setLoading(false); // Set loading state to false after success
       })
       .catch((error) => {
         console.error("Error sending email:", error);
-        setStatusMessage("Failed to send email. Please try again.");
+        setStatusMessage(
+          "Ops ... qualcosa è andato storto. Riprova più tardi."
+        );
         setLoading(false); // Set loading state to false after error
       });
   };

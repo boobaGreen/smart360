@@ -41,7 +41,7 @@ export default {
       keyframes: {
         jolt: {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-3px)" }, // Piccolo movimento verso l'alto
+          "50%": { transform: "translateY(-2px)" }, // Piccolo movimento verso l'alto
         },
         wiggle: {
           "0%, 100%": { transform: "rotate(-3deg)" },
