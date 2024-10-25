@@ -39,6 +39,10 @@ export default {
     },
     extend: {
       keyframes: {
+        jolt: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-3px)" }, // Piccolo movimento verso l'alto
+        },
         wiggle: {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },
@@ -58,6 +62,7 @@ export default {
         },
       },
       animation: {
+        jolt: "jolt 0.4s ease-in-out infinite",
         wiggle: "wiggle 1s ease-in-out infinite",
         drive: "drive 10s linear infinite", // Slower movement
         smoke1: "smoke 3s linear infinite",
