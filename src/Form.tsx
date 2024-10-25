@@ -175,18 +175,14 @@ export default function Form() {
                     "INVIA"
                   )}
                 </button>
-                <div className="flex justify-center items-center mt-24">
-                  <Chiama
-                    handleButtonClick={handleButtonClick}
-                    buttonText={buttonText}
-                  />
-                </div>
-                <div className="h-36"></div>
               </div>
             </form>
           </div>
         </div>
       </section>
+      <div className="flex justify-center items-center  mb-20">
+        <Chiama handleButtonClick={handleButtonClick} buttonText={buttonText} />
+      </div>
       <div className="h-48 absolute top-0 right-0">
         <TruckAnimation />
       </div>

@@ -1,8 +1,8 @@
 const TruckAnimation = () => {
   return (
-    <div className="flex justify-center items-center h-auto overflow-hidden">
-      <div className="relative w-full h-40 bg-transparent border-gray-[#6b7280] border-b-0">
-        <div className="absolute top-0 left-0 w-[320px] h-[150px] xl:animate-drive animate-driveMobile">
+    <div className="flex justify-center items-center h-60 overflow-hidden">
+      <div className="relative w-full h-40 bg-transparent border-gray-[#6b7280] border-b-0 ">
+        <div className="absolute top-0 left-0 w-[320px] h-[150px] xl:animate-drive animate-driveMobile ">
           {/* Cab section */}
           <div className="absolute top-1 right-0 w-[110px] h-[90px] bg-[#c4253f] rounded-t-[10px]"></div>
 
@@ -43,15 +43,19 @@ const TruckAnimation = () => {
           <div className="absolute bottom-[-12px] left-0 w-[320px] h-5 bg-[#000000] opacity-20 rounded-full"></div>
 
           {/* Nuvolette di fumo */}
-          <div className="absolute -top-8 left-4 animate-smoke-1 z-40 ">
-            <div className="w-5 h-5 bg-[#2cad5b] rounded-full "></div>
+          {/* Nuvolette di fumo */}
+          <div className="absolute top-20 left-2 animate-smoke1 z-20 ">
+            <div className="w-5 h-5 bg-[#e4e4e4] rounded-full "></div>
           </div>
-          <div className="absolute -top-10 left-2 animate-smoke-2 z-20">
-            <div className="w-6 h-6 bg-[#751e54] rounded-full opacity-60"></div>
+          <div className="absolute top-20 left-2 animate-smoke2 z-20">
+            <div className="w-6 h-6 bg-[#e4e4e4] rounded-full opacity-60"></div>
           </div>
-          <div className="absolute -top-12 left-0 animate-smoke-3 z-20">
-            <div className="w-7 h-7 bg-[#9cafa3] rounded-full opacity-50"></div>
+          <div className="absolute top-20 left-2 animate-smoke3 z-20">
+            <div className="w-7 h-7 bg-[#e4e4e4] rounded-full opacity-50"></div>
           </div>
+          {/* <div className="absolute top-20 left-2 animate-smoke4 z-20">
+            <div className="w-8 h-8 bg-[#e4e4e4] rounded-full opacity-40"></div>
+          </div> */}
         </div>
       </div>
     </div>

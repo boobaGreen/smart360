@@ -43,19 +43,32 @@ export default {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },
         },
+
         drive: {
           "0%": { left: "-320px" },
           "100%": { left: "100vw" },
+        },
+        smoke: {
+          "0%": { transform: "scale(0.5) translate(0, 0)", opacity: 0.7 },
+          "50%": {
+            transform: "scale(1.5) translate(-15px, -15px)",
+            opacity: 0.4,
+          },
+          "100%": { transform: "scale(2) translate(-30px, -30px)", opacity: 0 },
         },
       },
       animation: {
         wiggle: "wiggle 1s ease-in-out infinite",
         drive: "drive 10s linear infinite", // Slower movement
-        driveMobile: "drive 5s linear infinite", // Slower movement
+        smoke1: "smoke 3s linear infinite",
+        smoke2: "smoke 3s linear 1s infinite",
+        smoke3: "smoke 3s linear 2s infinite",
+        smoke4: "smoke 3s linear 3s infinite",
       },
 
       fontFamily: {
         title: ["Montserrat", "sans-serif"],
+        main: ["Oswald", "sans-serif"],
       },
       backgroundImage: {
         "elevator-small": "url('/img/elevator-bandiera-cut-3.webp')", //usata -smallImages  HeroSection *

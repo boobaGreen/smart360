@@ -50,7 +50,7 @@ const TestimonialsSection = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-gradient-to-r from-bluCesena-500 to-bluCesena-200  shadow-lg rounded-lg p-5 relative mb-10 w-64 md:w-80 hover:scale-125 animate-wiggle hover:animate-none  "
+            className="bg-gradient-to-r from-bluCesena-500 to-bluCesena-200  shadow-lg rounded-lg p-5 relative mb-10 w-64 md:w-80 hover:scale-125 hover:animate-none  "
           >
             <StarRating rating={testimonial.rating} />{" "}
             {/* Aggiunta delle stelle */}
