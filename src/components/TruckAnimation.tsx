@@ -13,7 +13,7 @@ const TruckAnimation = () => {
       hornSound.current.play();
       // Cambia il testo temporaneamente
       setDisplayText("01");
-      setHeaderText("General Lee"); // Cambia l'intestazione
+      setHeaderText("Generale Lee"); // Cambia l'intestazione
       // Ripristina il testo dopo 1 secondo
       setTimeout(() => {
         setDisplayText("Smart360°");

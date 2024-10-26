@@ -10,3 +10,7 @@ oppure faccio io per 300€ per garantito 5 anni ma serve creare un backend
 ---
 
 CTA E CTA PRIMO UGUALI POI HOVER COLO SU BOTTONI CHIAMA E RICHIEDI PREVENTIVO
+
+dichiaro di aver letto ed accettatao la policy
+
+privacy policy
