@@ -58,7 +58,7 @@ const TruckAnimation = () => {
           </div>
 
           {/* Wheels */}
-          <div className="absolute bottom-0 w-[55px] h-[55px] bg-[#374151] rounded-full shadow-lg right-[15px] animate-jolt">
+          <div className="absolute bottom-0 w-[55px] h-[55px] bg-[#374151] rounded-full shadow-lg right-[15px] animate-jolt ">
             <div className="absolute top-[10px] left-[10px] w-[35px] h-[35px] bg-gray-300 rounded-full"></div>
           </div>
 
