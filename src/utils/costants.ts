@@ -3,12 +3,14 @@ export const tel2 = "392-2389818"; //Filippo
 export const tel1Android = "tel:+393291943769"; //Giuseppe
 export const tel2Android = "tel:+393922389818"; //Filippo
 export const email = "grouptraslochismart360@gmail.com";
-export const via = "Via De Gasperi";
-export const civico = "109";
-export const comune = "Gambettola";
-export const cap = "47035";
+export const via = "Vicolo Malvasia";
+export const civico = "147";
+export const comune = "Cesena";
+export const cap = "47521";
 export const provincia = "FC";
-export const partitaIva = "03913420406";
+export const partitaIva = "04512220403";
+export const ragioneSociale = "Traslochi Smart 360";
+export const ragioneSociale2 = "Di Masaracchia Giuseppe Salvatore";
 
 // da portare su .env
 

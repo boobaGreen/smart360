@@ -8,6 +8,8 @@ import {
   cap,
   provincia,
   partitaIva,
+  ragioneSociale,
+  ragioneSociale2,
 } from "./utils/costants";
 
 export default function Footer() {
@@ -19,6 +21,8 @@ export default function Footer() {
       Filippo: {tel1} <br />
       <a className="">{email}</a> <br />
       <p className="leading-normal my-5">
+        <p>{ragioneSociale}</p>
+        <p>{ragioneSociale2}</p>
         {via} <span>{civico}</span>
         <br />
         {comune} {cap} {provincia}
