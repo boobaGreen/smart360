@@ -8,11 +8,3 @@ al mese 200 contatti sono gratis di piu bisogna passare a servizio a pagamento
 oppure faccio io per 300€ per garantito 5 anni ma serve creare un backend
 
 ---
-
-CTA E CTA PRIMO UGUALI POI HOVER COLO SU BOTTONI CHIAMA E RICHIEDI PREVENTIVO
-
-dichiaro di aver letto ed accettatao la policy
-
-privacy policy
-
-Ragione sociale: Traslochi Smart 360 Di Masaracchia Giuseppe Salvatore

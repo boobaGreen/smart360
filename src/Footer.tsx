@@ -14,28 +14,30 @@ import {
 
 export default function Footer() {
   return (
-    <div className="font-title font-semibold pt-0  text-center mt-0 text-redCesena-900 w-auto flex flex-col justify-center items-center ">
+    <footer className="font-title font-semibold pt-0  text-center mt-0 text-redCesena-900 w-auto flex flex-col justify-center items-center ">
       <div className="w-1/2 border-t border-gray-200 mb-12"></div>
       <br /> <br />
       Giuseppe: {tel2} <br /> <br />
       Filippo: {tel1} <br />
       <a className="">{email}</a> <br />
-      <p className="leading-normal my-5">
-        <p>{ragioneSociale}</p>
-        <p>{ragioneSociale2}</p>
-        {via} <span>{civico}</span>
-        <br />
-        {comune} {cap} {provincia}
-        <br />
-        <br />
-        P.I. {partitaIva}
-      </p>
+      <div className="font-title font-normal text-sm">
+        <div className="leading-snug my-5">
+          <p>{ragioneSociale}</p>
+          <p>{ragioneSociale2}</p>
+          {via} <span>{civico}</span>
+          <br />
+          {comune} {cap} {provincia}
+          <br />
+          <br />
+          P.I. {partitaIva}
+        </div>
+      </div>
       <span className="inline-flex ">
         <a className="">
           {/* Social media icons */}
           {/* Your SVG icons go here */}
         </a>
       </span>
-    </div>
+    </footer>
   );
 }

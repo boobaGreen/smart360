@@ -1,15 +1,24 @@
 import { useClickAway } from "react-use";
-import { useRef } from "react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
 import { routes } from "../utils/routes";
 
-export const NavMobile = () => {
+interface NavMobileProps {
+  setIsVisible: (isVisible: boolean) => void;
+}
+
+export const NavMobile = ({ setIsVisible }: NavMobileProps) => {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef(null);
 
   useClickAway(ref, () => setOpen(false));
+
+  const handlePrivacyClick = () => {
+    localStorage.setItem("privacyAccepted", "false"); // Azzera il valore di privacyAccepted
+    // Puoi anche aggiungere qui qualsiasi logica aggiuntiva che desideri
+    setIsVisible(true);
+  };
 
   return (
     <div ref={ref} className="lg:hidden text-white ">
@@ -43,10 +52,14 @@ export const NavMobile = () => {
                     className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr from-neutral-800 via-neutral-950 to-neutral-700"
                   >
                     <a
-                      onClick={() => setOpen((prev) => !prev)}
-                      className={
-                        "flex items-center justify-between w-full p-5 rounded-xl bg-neutral-950"
-                      }
+                      onClick={() => {
+                        // Chiama handlePrivacyClick solo se la voce è "Privacy"
+                        if (route.title === "Privacy") {
+                          handlePrivacyClick();
+                        }
+                        setOpen((prev) => !prev); // Chiude il menu dopo il clic
+                      }}
+                      className="flex items-center justify-between w-full p-5 rounded-xl bg-neutral-950"
                       href={route.href}
                     >
                       <span className="flex gap-1 text-lg">{route.title}</span>

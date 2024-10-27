@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import PrivacyModal from "./components/PrivacyModal";
 import TestimonialsSection from "./Testimonial";
-import { useRef } from "react";
 import { IUseMediaQueryProps } from "./interfaces/IUseMediaQueryProps";
 import Form from "./Form";
 
@@ -34,6 +34,7 @@ function useMediaQuery(query: IUseMediaQueryProps["query"]): boolean {
 }
 
 function App() {
+  const [isVisible, setIsVisible] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -52,7 +53,7 @@ function App() {
 
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Change image automatically every 6 seconds
+  // Change image automatically every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
@@ -62,14 +63,17 @@ function App() {
   }, [images]);
 
   return (
-    <div className="flex flex-col min-h-screen h-auto bg-bluCesena-500 overflow-x-hidden select-none font-title  ">
+    <div className="flex flex-col min-h-screen h-auto bg-bluCesena-500 overflow-x-hidden select-none font-title">
+      {/* Privacy Modal */}
+      <PrivacyModal isVisible={isVisible} setIsVisible={setIsVisible} />
+
       {/* Header and hero image */}
       <HeaderAndHero
         scrollToForm={scrollToForm}
         currentImage={currentImage}
         images={images}
+        setIsVisible={setIsVisible}
       />
-      {/* New Section for alternating boxes */}
       <CentralZPattern
         riga1Images={riga1Images}
         riga2Images={riga2Images}
@@ -81,7 +85,7 @@ function App() {
         <TestimonialsSection />
       </div>
       <div ref={formRef} id="contacts">
-        <Form />
+        <Form setIsVisible={setIsVisible} />
       </div>
       <TruckAnimation />
       <Footer />

@@ -11,6 +11,7 @@ export const provincia = "FC";
 export const partitaIva = "04512220403";
 export const ragioneSociale = "Traslochi Smart 360";
 export const ragioneSociale2 = "Di Masaracchia Giuseppe Salvatore";
+export const dataUltimoAggiornamentoPrivacy = "27/10/2024";
 
 // da portare su .env
 

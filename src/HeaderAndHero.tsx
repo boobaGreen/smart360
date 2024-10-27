@@ -10,6 +10,7 @@ export default function HeaderAndHero({
   scrollToForm,
   currentImage,
   images,
+  setIsVisible,
 }: IHeaderAndHeroProps) {
   return (
     <div id="home">
@@ -18,8 +19,8 @@ export default function HeaderAndHero({
       >
         <div className="uppercase text-red-800 text-lg md:text-2xl lg:text-3xl font-title font-black pl-4 flex justify-between pr-6 md:hover:bg-bluCesena-500 ">
           <Logo />
-          <NavDesktop />
-          <NavMobile />
+          <NavDesktop setIsVisible={setIsVisible} />
+          <NavMobile setIsVisible={setIsVisible} />
         </div>
 
         <Title />

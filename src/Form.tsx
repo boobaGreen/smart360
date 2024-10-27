@@ -8,12 +8,18 @@ import { initEmailjs } from "./utils/costants";
 
 emailjs.init(initEmailjs); // Initialize EmailJS with your User ID
 
-export default function Form() {
+interface FormProps {
+  setIsVisible: (visible: boolean) => void;
+}
+
+export default function Form({ setIsVisible }: FormProps) {
+  // Accept setIsVisible as a prop
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
 
   const [buttonText, setButtonText] = useState("CHIAMA");
@@ -23,8 +29,9 @@ export default function Form() {
       window.location.href = tel1Android;
     }
   };
-  const [statusMessage, setStatusMessage] = useState(""); // State for status messages
-  const [loading, setLoading] = useState(false); // State to manage loading spinner
+
+  const [statusMessage, setStatusMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: { target: { name: string; value: unknown } }) => {
     const { name, value } = e.target;
@@ -34,33 +41,38 @@ export default function Form() {
     }));
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault(); // Prevent the default form submission
-    setLoading(true); // Set loading state to true
+  const handlePrivacyChange = () => {
+    setPrivacyAccepted(!privacyAccepted);
+  };
 
+  const handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    if (!privacyAccepted) {
+      setStatusMessage("Devi accettare la privacy per inviare il modulo.");
+      return;
+    }
+
+    setLoading(true);
     emailjs
       .send("service_s3jp2sp", "template_xablkhb", formData)
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       .then((_response) => {
-        console.log("");
         setStatusMessage("Messaggio Ricevuto! Grazie per averci contattato.");
         setFormData({ name: "", email: "", message: "" });
-        setLoading(false); // Set loading state to false after success
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error sending email:", error);
         setStatusMessage(
           "Ops ... qualcosa è andato storto. Riprova più tardi."
         );
-        setLoading(false); // Set loading state to false after error
+        setLoading(false);
       });
   };
 
   return (
     <div className="font-title">
       <section className="text-gray-700 body-font">
-        {" "}
-        {/* Make section relative */}
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
             <h3 className="sm:text-3xl text-xl font-bold title-font mb-4 text-gray-900">
@@ -90,7 +102,7 @@ export default function Form() {
                     htmlFor="name"
                     className="leading-7 text-sm text-gray-600"
                   >
-                    Name
+                    Nome
                   </label>
                   <input
                     type="text"
@@ -128,7 +140,7 @@ export default function Form() {
                     htmlFor="message"
                     className="leading-7 text-sm text-gray-600"
                   >
-                    Message
+                    Messaggio
                   </label>
                   <textarea
                     id="message"
@@ -140,6 +152,35 @@ export default function Form() {
                   ></textarea>
                 </div>
               </div>
+
+              {/* Checkbox per l'accettazione della privacy */}
+              <div className="p-2 w-full">
+                <div className="flex items-center justify-center">
+                  <input
+                    type="checkbox"
+                    id="privacyCheck"
+                    checked={privacyAccepted}
+                    onChange={handlePrivacyChange}
+                    className="mr-2 leading-tight"
+                    required
+                  />
+                  <label
+                    htmlFor="privacyCheck"
+                    className="text-sm text-gray-600"
+                  >
+                    Ho preso nota della{" "}
+                    <a
+                      onClick={() => setIsVisible(true)}
+                      href="#privacy"
+                      className="text-blue-600 underline onClick={() => setIsVisible(true)} "
+                    >
+                      privacy policy
+                    </a>
+                    .
+                  </label>
+                </div>
+              </div>
+
               {statusMessage && (
                 <div className="mt-4 text-center flex justify-center items-center w-full">
                   <p className="text-gray-600 mt-14">{statusMessage}</p>
