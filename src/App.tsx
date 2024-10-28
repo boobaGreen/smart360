@@ -35,6 +35,7 @@ function useMediaQuery(query: IUseMediaQueryProps["query"]): boolean {
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isOpen, setOpen] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -73,6 +74,8 @@ function App() {
         currentImage={currentImage}
         images={images}
         setIsVisible={setIsVisible}
+        isOpen={isOpen}
+        setOpen={setOpen}
       />
       <CentralZPattern
         riga1Images={riga1Images}

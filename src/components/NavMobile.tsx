@@ -1,15 +1,20 @@
 import { useClickAway } from "react-use";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
 import { routes } from "../utils/routes";
 
 interface NavMobileProps {
   setIsVisible: (isVisible: boolean) => void;
+  isOpen: boolean;
+  setOpen: (isOpen: boolean) => void;
 }
 
-export const NavMobile = ({ setIsVisible }: NavMobileProps) => {
-  const [isOpen, setOpen] = useState(false);
+export const NavMobile = ({
+  setIsVisible,
+  isOpen,
+  setOpen,
+}: NavMobileProps) => {
   const ref = useRef(null);
 
   useClickAway(ref, () => setOpen(false));
@@ -36,7 +41,7 @@ export const NavMobile = ({ setIsVisible }: NavMobileProps) => {
   return (
     <div ref={ref} className="lg:hidden text-white z-50 ">
       <div className="text-redCesena-500">
-        <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
+        <Hamburger toggled={isOpen} size={20} onToggle={setOpen} />
       </div>
       <AnimatePresence>
         {isOpen && (
@@ -70,7 +75,7 @@ export const NavMobile = ({ setIsVisible }: NavMobileProps) => {
                         if (route.title === "Privacy") {
                           handlePrivacyClick();
                         }
-                        setOpen((prev) => !prev); // Chiude il menu dopo il clic
+                        setOpen(false); // Chiude il menu dopo il clic
                       }}
                       className="flex items-center justify-between w-full p-5 rounded-xl bg-neutral-950"
                       href={route.href}

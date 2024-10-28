@@ -11,6 +11,8 @@ export default function HeaderAndHero({
   currentImage,
   images,
   setIsVisible,
+  isOpen,
+  setOpen,
 }: IHeaderAndHeroProps) {
   return (
     <div id="home">
@@ -20,10 +22,15 @@ export default function HeaderAndHero({
         <div className="uppercase text-redCesena-800 text-lg md:text-2xl lg:text-3xl font-title font-black pl-4 flex justify-between pr-6 md:hover:bg-bluCesena-500 ">
           <Logo />
           <NavDesktop setIsVisible={setIsVisible} />
-          <NavMobile setIsVisible={setIsVisible} />
+          <NavMobile
+            setIsVisible={setIsVisible}
+            isOpen={isOpen}
+            setOpen={setOpen}
+          />
         </div>
 
-        <Title />
+        {/* Conditionally render Title only if isOpen is false */}
+        {!isOpen && <Title />}
       </header>
       {/* White description below */}
       <section className="bg-bluCesena-500 min-h-[20vh] w-full flex-col justify-center items-center">
