@@ -32,7 +32,7 @@ const TruckAnimation = () => {
           onClick={playHornSound}
         >
           {/* Cab section */}
-          <div className="z-10 absolute top-2 right-0 w-[110px] h-[100px] bg-[#c4253f] rounded-t-[10px] animate-jolt border-2 border-[#000000]">
+          <div className="z-10 absolute top-2 right-0 w-[110px] h-[100px] bg-redVan-400 rounded-t-[10px] animate-jolt border-2 border-[#000000]">
             {/* Window */}
             <div className="absolute top-[12px] right-[10px] w-[60px] h-[35px] bg-bluCesena-200 rounded border-2 border-[#000000]"></div>
 
@@ -40,7 +40,7 @@ const TruckAnimation = () => {
             <div className="absolute top-[60px] right-[80px] w-5 h-[30px] bg-[#646363] rounded z-40 border-2 border-[#000000]"></div>
 
             {/* Mirror */}
-            <div className="absolute top-[35px] right-[-11px] w-[10px] h-[30px] bg-[#c4253f] border-2 border-[#000000] "></div>
+            <div className="absolute top-[35px] right-[-11px] w-[10px] h-[30px] bg-redVan-400 border-2 border-[#000000] "></div>
           </div>
 
           {/* Box section */}
@@ -53,8 +53,8 @@ const TruckAnimation = () => {
                 {displayText} {/* Usa lo stato per il testo */}
               </span>
             </div>
-            <div className="absolute top-[22px] right-[10px] w-[170px] h-1 bg-[#c4253f]"></div>
-            <div className="absolute bottom-[22px] right-[10px] w-[170px] h-1 bg-[#c4253f]"></div>
+            <div className="absolute top-[22px] right-[10px] w-[170px] h-1 bg-redVan-400"></div>
+            <div className="absolute bottom-[22px] right-[10px] w-[170px] h-1 bg-redVan-400"></div>
           </div>
 
           {/* Wheels */}
