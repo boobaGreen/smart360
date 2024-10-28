@@ -18,10 +18,10 @@ export default function Footer() {
       <div className="w-auto border-t border-gray-200 mb-12"></div>
 
       <p> Giuseppe </p>
-      <p> {tel2}</p>
+      <p> {tel1}</p>
 
       <p className="mt-4">Filippo</p>
-      <p>{tel1}</p>
+      <p>{tel2}</p>
 
       <p className="mt-4"> {email}</p>
 
