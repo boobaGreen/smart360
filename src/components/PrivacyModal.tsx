@@ -22,8 +22,8 @@ const PrivacyModal = ({ isVisible, setIsVisible }: PrivacyModalProps) => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 bg-redCesena-600">
-      <div className="bg-white p-8 rounded-lg max-w-lg w-full shadow-lg overflow-y-auto max-h-[80vh] text-redCesena-900">
+    <div className="fixed inset-0  bg-opacity-50 flex items-center justify-center z-40 bg-redCesena-600 ">
+      <div className="bg-white p-8 rounded-lg md:max-w-lg mx-10 shadow-lg overflow-y-auto max-h-[80vh] text-redCesena-900">
         <h2 className="text-xl font-semibold mb-4">
           Informativa sulla Privacy
         </h2>

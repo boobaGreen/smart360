@@ -21,20 +21,20 @@ export const NavMobile = ({ setIsVisible }: NavMobileProps) => {
   };
 
   return (
-    <div ref={ref} className="lg:hidden text-white ">
+    <div ref={ref} className="lg:hidden text-white z-50 ">
       <div className="text-redCesena-500">
         <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
       </div>
-      <AnimatePresence>
+      <AnimatePresence >
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-0 shadow-4xl right-0 top-[3.5rem] mt-0 bg-neutral-950 border-b border-b-white/20 md:mt-4"
+            className=" fixed left-0 shadow-4xl right-0 top-[3.5rem] mt-0 bg-neutral-950 border-b border-b-white/20 md:mt-4 flex justify-center"
           >
-            <ul className="grid gap-2 bg-bluCesena-500 p-20">
+            <ul className="grid gap-2  px-20 py-20  mx-2 rounded-3xl">
               {routes.map((route, idx) => {
                 const { Icon } = route;
 
@@ -49,7 +49,7 @@ export const NavMobile = ({ setIsVisible }: NavMobileProps) => {
                       delay: 0.1 + idx / 10,
                     }}
                     key={route.title}
-                    className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr from-neutral-800 via-neutral-950 to-neutral-700"
+                    className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr from-bluCesena-200  via-bluCesena-500 to-bluCesena-700"
                   >
                     <a
                       onClick={() => {

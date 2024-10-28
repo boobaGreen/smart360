@@ -17,7 +17,7 @@ export default function HeaderAndHero({
       <header
         className={`${images[currentImage]} bg-cover bg-no-repeat min-h-[80vh] `}
       >
-        <div className="uppercase text-red-800 text-lg md:text-2xl lg:text-3xl font-title font-black pl-4 flex justify-between pr-6 md:hover:bg-bluCesena-500 ">
+        <div className="uppercase text-redCesena-800 text-lg md:text-2xl lg:text-3xl font-title font-black pl-4 flex justify-between pr-6 md:hover:bg-bluCesena-500 ">
           <Logo />
           <NavDesktop setIsVisible={setIsVisible} />
           <NavMobile setIsVisible={setIsVisible} />

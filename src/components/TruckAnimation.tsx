@@ -37,7 +37,7 @@ const TruckAnimation = () => {
             <div className="absolute top-[12px] right-[10px] w-[60px] h-[35px] bg-bluCesena-200 rounded border-2 border-[#000000]"></div>
 
             {/* Grill */}
-            <div className="absolute top-[60px] right-[80px] w-5 h-[30px] bg-[#646363] rounded z-50 border-2 border-[#000000]"></div>
+            <div className="absolute top-[60px] right-[80px] w-5 h-[30px] bg-[#646363] rounded z-40 border-2 border-[#000000]"></div>
 
             {/* Mirror */}
             <div className="absolute top-[35px] right-[-11px] w-[10px] h-[30px] bg-[#c4253f] border-2 border-[#000000] "></div>
