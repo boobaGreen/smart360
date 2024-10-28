@@ -15,7 +15,7 @@ import {
 export default function Footer() {
   return (
     <footer className="font-title font-semibold pt-0  text-center mt-0 text-redCesena-900 w-auto flex flex-col justify-center items-center ">
-      <div className="w-1/2 border-t border-gray-200 mb-12"></div>
+      <div className="w-auto border-t border-gray-200 mb-12"></div>
 
       <p> Giuseppe </p>
       <p> {tel2}</p>
