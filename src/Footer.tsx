@@ -16,10 +16,15 @@ export default function Footer() {
   return (
     <footer className="font-title font-semibold pt-0  text-center mt-0 text-redCesena-900 w-auto flex flex-col justify-center items-center ">
       <div className="w-1/2 border-t border-gray-200 mb-12"></div>
-      <br /> <br />
-      Giuseppe <br /> {tel2} <br /> <br />
-      Filippo <br /> {tel1} <br /> <br />
-      <a className="">{email}</a> <br />
+
+      <p> Giuseppe </p>
+      <p> {tel2}</p>
+      <br />
+      <p>Filippo</p>
+      <p>{tel1}</p>
+      <br />
+      <p> {email}</p>
+
       <div className="font-title font-normal text-sm">
         <div className="leading-snug my-5">
           <p>{ragioneSociale}</p>
