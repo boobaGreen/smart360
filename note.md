@@ -8,3 +8,5 @@ al mese 200 contatti sono gratis di piu bisogna passare a servizio a pagamento
 oppure faccio io per 300€ per garantito 5 anni ma serve creare un backend
 
 ---
+
+video da wa ged faccio sezione con video a magari una riga4 in piu
