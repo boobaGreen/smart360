@@ -19,11 +19,11 @@ export default function Footer() {
 
       <p> Giuseppe </p>
       <p> {tel2}</p>
-      <br />
-      <p>Filippo</p>
+
+      <p className="mt-4">Filippo</p>
       <p>{tel1}</p>
-      <br />
-      <p> {email}</p>
+
+      <p className="mt-4"> {email}</p>
 
       <div className="font-title font-normal text-sm">
         <div className="leading-snug my-5">
