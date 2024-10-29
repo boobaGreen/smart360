@@ -8,4 +8,4 @@ https://www.grouptraslochismart360.it/
 
 --scrivere operiamo in emilia romagna
 --riverificare nome testimonial e loro recensioni
---aggiunegre numero di telefono in form , in emailjs ed in privacy
+-- aggiustata foto/ attenzione non raddappiare camioncini
