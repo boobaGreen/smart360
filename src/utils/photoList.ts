@@ -59,3 +59,4 @@ export const riga2Images = [
   "bg-apertura-flotta",
   "bg-elevator-large",
 ];
+export const riga4Images = ["bg-video-1"];

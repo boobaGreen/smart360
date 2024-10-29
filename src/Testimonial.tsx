@@ -42,7 +42,7 @@ const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-10 bg-white px-20">
+    <section className="py-10 bg-white px-20 xl:py-60">
       <h2 className="text-2xl font-bold text-center mb-20 mt-12 font-title">
         Cosa dicono i nostri clienti
       </h2>
@@ -64,7 +64,7 @@ const TestimonialsSection = () => {
                 {testimonial.name}
               </h3>
             </div>
-            <p className="text-redCesena font-title">{testimonial.text}</p>
+            <p className="text-redCesena-900 font-title">{testimonial.text}</p>
           </div>
         ))}
       </div>

@@ -11,6 +11,7 @@ import {
   riga1Images,
   riga2Images,
   riga3Images,
+  riga4Images,
 } from "./utils/photoList";
 import HeaderAndHero from "./HeaderAndHero";
 import CentralZPattern from "./CentralZPattern";
@@ -81,6 +82,7 @@ function App() {
         riga1Images={riga1Images}
         riga2Images={riga2Images}
         riga3Images={riga3Images}
+        riga4Images={riga4Images}
         scrollToForm={scrollToForm}
         currentImage={currentImage}
       />

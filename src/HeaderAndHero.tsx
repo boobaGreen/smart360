@@ -36,26 +36,20 @@ export default function HeaderAndHero({
       <section className="bg-bluCesena-500 min-h-[20vh] w-full flex-col justify-center items-center">
         <CtaPrimo scrollToForm={scrollToForm} />
         <h2 className="text-white font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-16 lg:mt-20">
-          NOLEGGIO
+          TRASLOCHI
         </h2>
         <h2 className="text-white font-title tracking-[0.35em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center items-center mt-4 ">
-          PIATTAFORME
-        </h2>
-        <h2 className="text-white font-title tracking-[0.70em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center mt-4 items-center">
-          PER MOBILI &
-        </h2>
-        <h2 className="text-white font-title tracking-[0.5em] md:tracking-[0.75em] text-lg md:text-xl font-bold leading-4 flex justify-center mt-4 items-center">
-          ELETTRODOMESTICI
+          COMPLETI
         </h2>
 
         <p className=" my-4 px-16 mt-10 font-title text-base font-medium leading-6 xl:px-80 xl:text-xl pt-20">
-          Stai cercando di spostare un divano, un grande frigorifero, un
-          mobiletto o un grande letto su per le scale o attraverso quella porta
-          stretta? È molto più semplice utilizzare un sollevatore per
-          piattaforme per mobili per risparmiare tempo, denaro e fatica.
-          <br className="mb-6" /> I nostri montacarichi possono anche ridurre al
-          minimo il potenziale rischio di danni ai vostri oggetti e proprietà di
-          valore.
+          Hai bisogno di una mano per il trasloco nella tua nuova casa dei
+          sogni? Imballiamo la tua merce con cura e la trasportiamo in ordine e
+          sicurezza nella tua nuova abitazione.
+          <br className="mb-6" /> Hai necessita' di business per portare
+          forniture di mobili o di merci in un nuovo ufficio o negozio?
+          <br className="mb-6" />
+          Siamo qui per aiutarti.
         </p>
         <div className="mt-24">
           <TruckAnimation />
