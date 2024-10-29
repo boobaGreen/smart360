@@ -86,8 +86,7 @@ export default function Form({ setIsVisible }: FormProps) {
             </h3>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base mt-16 font-medium">
               Non esitare a contattarci per un preventivo gratuito o per
-              qualsiasi dubbio inerente i nostri servizi , saremo felici di
-              risponderti entro massimo 24 ore.
+              qualsiasi dubbio inerente i nostri servizi
             </p>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base font-medium">
               Se preferisci chiamaci al telefono ore ufficio o scrivici su
