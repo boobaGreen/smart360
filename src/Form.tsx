@@ -3,7 +3,6 @@ import { useState } from "react";
 import Chiama from "./components/Chiama";
 import { useMediaQuery } from "react-responsive";
 import { tel1, tel1Android } from "./utils/costants";
-import TruckAnimation from "./components/TruckAnimation";
 import { initEmailjs } from "./utils/costants";
 
 emailjs.init(initEmailjs); // Initialize EmailJS with your User ID
@@ -17,6 +16,7 @@ export default function Form({ setIsVisible }: FormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "", // Aggiungi il campo telefono
     message: "",
   });
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
@@ -55,10 +55,9 @@ export default function Form({ setIsVisible }: FormProps) {
     setLoading(true);
     emailjs
       .send("service_s3jp2sp", "template_xablkhb", formData)
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      .then((_response) => {
+      .then(() => {
         setStatusMessage("Messaggio Ricevuto! Grazie per averci contattato.");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "" }); // Resetta anche il campo telefono
         setLoading(false);
       })
       .catch((error) => {
@@ -94,8 +93,11 @@ export default function Form({ setIsVisible }: FormProps) {
             </p>
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
-            <form onSubmit={handleSubmit} className="flex flex-wrap -m-2">
-              <div className="p-2 w-1/2">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-wrap -m-2 justify-center"
+            >
+              <div className="p-2 w-2/3">
                 <div className="relative">
                   <label
                     htmlFor="name"
@@ -114,7 +116,7 @@ export default function Form({ setIsVisible }: FormProps) {
                   />
                 </div>
               </div>
-              <div className="p-2 w-1/2">
+              <div className="p-2 w-2/3">
                 <div className="relative">
                   <label
                     htmlFor="email"
@@ -133,7 +135,28 @@ export default function Form({ setIsVisible }: FormProps) {
                   />
                 </div>
               </div>
-              <div className="p-2 w-full">
+              <div className="p-2 w-2/3">
+                {" "}
+                {/* Aggiungi il campo telefono */}
+                <div className="relative">
+                  <label
+                    htmlFor="phone"
+                    className="leading-7 text-sm text-gray-600"
+                  >
+                    Telefono
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
+                  />
+                </div>
+              </div>
+              <div className="p-2 w-2/3">
                 <div className="relative">
                   <label
                     htmlFor="message"
@@ -171,7 +194,7 @@ export default function Form({ setIsVisible }: FormProps) {
                     <a
                       onClick={() => setIsVisible(true)}
                       href="#privacy"
-                      className="text-blue-600 underline onClick={() => setIsVisible(true)} "
+                      className="text-blue-600 underline"
                     >
                       privacy policy
                     </a>
@@ -210,27 +233,26 @@ export default function Form({ setIsVisible }: FormProps) {
                         <path
                           className="opacity-75"
                           fill="currentColor"
-                          d="M4 12a8 8 0 018-8v8h8a8 8 0 11-16 0z"
+                          d="M4 12a8 8 0 018-8v8l4 4a8 8 0 01-8 8v-8l-4-4z"
                         ></path>
                       </svg>
-                      Invio...
+                      Inviando...
                     </div>
                   ) : (
-                    "INVIA"
+                    "Invia"
                   )}
                 </button>
               </div>
             </form>
           </div>
+          <div className="mt-16 flex justify-center items-center">
+            <Chiama
+              handleButtonClick={handleButtonClick}
+              buttonText={buttonText}
+            />
+          </div>
         </div>
       </section>
-      <div className="flex justify-center items-center  mb-20">
-        <Chiama handleButtonClick={handleButtonClick} buttonText={buttonText} />
-      </div>
-      <div className="h-48 absolute top-0 right-0">
-        <TruckAnimation />
-      </div>
-      {/* Adjust TruckAnimation position */}
     </div>
   );
 }
