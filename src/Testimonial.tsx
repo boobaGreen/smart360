@@ -4,19 +4,19 @@ const testimonials = [
   {
     name: "Samantha Brunacci",
     photo: "/img/testimonial1.webp",
-    text: "Ottimo servizio! Sono molto soddisfatto della mia esperienza.",
+    text: "Veloci e precisi, mi sono trovata benissimo!",
     rating: 4, // Aggiunta del punteggio
   },
   {
     name: "Giulia Pazzaglia",
     photo: "/img/testimonial2.webp",
-    text: "Prodotti di alta qualità e un’assistenza clienti eccellente!",
+    text: "Ottimo servizio, consigliato!",
     rating: 5, // Aggiunta del punteggio
   },
   {
     name: "Luca Stringara",
     photo: "/img/testimonial3.webp",
-    text: "Consiglio vivamente! Tornerò sicuramente per altri acquisti.",
+    text: "Mi hanno seguìto passo passo, sono molto soddisfatto!",
     rating: 5, // Aggiunta del punteggio
   },
 ];
