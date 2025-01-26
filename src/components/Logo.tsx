@@ -1,5 +1,3 @@
-
-
 export default function Logo() {
   return (
     <div>
@@ -9,7 +7,7 @@ export default function Logo() {
       </div>
       <div className="leading-none animate-wiggle w-fit">
         <span className="text-redCesena-400">smart</span>
-        <span className="text-white ">360°</span>
+        <span className="text-white ">350°</span>
       </div>
     </div>
   );
