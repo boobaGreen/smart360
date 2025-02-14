@@ -12,4 +12,6 @@ https://www.grouptraslochismart360.it/
 -- aggingere bing search
 ggogle seacrh traslochi cesena 19.55 del 6-11-2024 pag 5
 
-godaddy host
+godaddy host claudiodallaradev
+
+sympleanalytics claudiodallaradev

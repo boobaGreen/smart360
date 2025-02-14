@@ -39,8 +39,7 @@ export default function Footer() {
       </div>
       <span className="inline-flex ">
         <a className="">
-          {/* Social media icons */}
-          {/* Your SVG icons go here */}
+            
         </a>
       </span>
     </footer>
