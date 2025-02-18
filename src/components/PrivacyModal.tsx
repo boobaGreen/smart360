@@ -22,8 +22,18 @@ const PrivacyModal = ({ isVisible, setIsVisible }: PrivacyModalProps) => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0  bg-opacity-50 flex items-center justify-center z-40 bg-redCesena-600 ">
+    <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center z-40 bg-redCesena-600">
       <div className="bg-white p-8 rounded-lg md:max-w-lg mx-10 shadow-lg overflow-y-auto max-h-[80vh] text-redCesena-900">
+        {/* Top Accept Button */}
+        <div className="flex justify-center my-4">
+          <button
+            onClick={handleAccept}
+            className="bg-bluCesena-500 w-auto text-white py-2 px-4 rounded hover:bg-blue-600 hover:bg-bluCesena-600"
+          >
+            Accetto
+          </button>
+        </div>
+
         <h2 className="text-xl font-semibold mb-4">
           Informativa sulla Privacy
         </h2>
@@ -140,10 +150,12 @@ const PrivacyModal = ({ isVisible, setIsVisible }: PrivacyModalProps) => {
         <p className="text-xs mt-2 mb-6">
           Ultimo aggiornamento: {dataUltimoAggiornamentoPrivacy}.
         </p>
-        <div className="flex justify-center mt-12">
+
+        {/* Bottom Accept Button */}
+        <div className="flex justify-center my-4">
           <button
             onClick={handleAccept}
-            className="bg-bluCesena-500 w-auto text-white py-2 px-4 rounded hover:bg-blue-600 hover:bg-bluCesena-600 "
+            className="bg-bluCesena-500 w-auto text-white py-2 px-4 rounded hover:bg-blue-600 hover:bg-bluCesena-600"
           >
             Accetto
           </button>
